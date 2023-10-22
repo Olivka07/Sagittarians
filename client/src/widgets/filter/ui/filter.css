@@ -1,0 +1,22 @@
+.filters__container {
+    position: sticky;
+}
+.filters__container label {
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 15px;
+    color: rgb(245, 183, 237);
+}
+
+.filters__container > label {
+    margin-bottom: 20px;
+}
+.ant-checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-checkbox-input {
+    display: block !important;
+}
+

@@ -1,0 +1,20 @@
+.header__button {
+    display: inline-block;
+    padding: 5px 10px;
+    color:rgb(156, 156, 156);
+    font-family: Noto Sans, sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+.header__button:hover {
+    animation: foo 0.2s linear forwards;
+    cursor: pointer;
+    color: rgb(209, 209, 209);
+}
+
+@keyframes foo {
+    to {
+        transform: scale(1.1);
+    }
+}

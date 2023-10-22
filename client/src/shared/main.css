@@ -1,0 +1,10 @@
+.layout {
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 20px;
+}
+

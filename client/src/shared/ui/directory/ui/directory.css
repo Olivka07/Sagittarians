@@ -1,0 +1,82 @@
+.changed {
+    color: rgb(207, 31, 31);
+    font-weight: 900;
+    font-family:Arial, sans-serif;
+}
+
+.button_add {
+    font-weight: 600;
+    color: rgb(29, 245, 5);
+    background-color: inherit;
+    box-shadow: 4px -3px 7px 1px #64f564;
+    font-size: 14px;
+    border: 1px solid greenyellow;
+    margin: 20px 0px;
+}
+
+.button_add:hover {
+    box-shadow: 4px -3px 7px 1px #3fbb3f;
+    color: green !important;
+    background-color: rgba(14, 7, 33, 0.642);
+    border: 1px solid black !important;
+}
+
+.button_save {
+    font-weight: 600;
+    color: rgb(47, 220, 255);
+    background-color: inherit;
+    box-shadow: 4px -3px 7px 1px rgb(47, 220, 255);
+    font-size: 14px;
+    border: 1px solid rgb(47, 220, 255);
+    margin: 20px 0px 20px 20px;
+}
+
+.button_save:hover {
+    box-shadow: 4px -3px 7px 1px rgb(20, 103, 119);
+    color: rgb(19, 124, 142) !important;
+    background-color: rgba(14, 7, 33, 0.642);
+    border: 1px solid black !important;
+}
+
+.dict__header {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.btn__delete {
+    background-color: rgb(234, 136, 136);
+    color: rgb(121, 18, 18);
+}
+
+.btn__save {
+    background-color: rgb(164, 239, 237);
+    color: rgb(9, 43, 123);
+}
+
+.btn__delete:hover {
+    border-color: rgb(255, 0, 0) !important;
+    color: red !important;
+}
+
+.btn__save:hover {
+    border-color: rgb(0, 255, 234) !important;
+    color: rgb(0, 132, 255) !important;
+}
+
+.dict__warning {
+    margin: 20px 0px 10px 0px;
+    color: red;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.ant-popconfirm-buttons button {
+    margin-right: 20px;
+    width: 30%;
+}
+
+.ant-popconfirm-buttons button:nth-child(1) {
+    background-color: rgba(188, 199, 209, 0.904);
+}

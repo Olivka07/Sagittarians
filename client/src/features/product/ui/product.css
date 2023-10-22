@@ -1,0 +1,29 @@
+.content__search {
+    align-self: center;
+    margin-top: 2%;
+    font-family: Noto Sans, sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 5px 10px;
+    background-color: rgba(205, 205, 205, 0.512);
+    border: 0;
+}
+
+.content__search::placeholder {
+    color: rgb(28, 27, 27);
+}
+
+.content__search:hover {
+    animation: foo1 .3s linear forwards;
+}
+
+@keyframes foo1 {
+    to {
+        box-shadow: 1px 1px 8px 1px rgb(255, 255, 255);
+    }
+}
+
+.content__search:focus {
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}

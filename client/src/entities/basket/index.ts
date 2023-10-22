@@ -1,0 +1,1 @@
+export * as basketStore from './model/store'

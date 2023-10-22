@@ -1,0 +1,10 @@
+.ant-modal-footer {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: end;
+    justify-items: end;
+}
+
+.ant-modal-footer button {
+    display: block;
+}

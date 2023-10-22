@@ -1,0 +1,20 @@
+.ant-form-item:last-child {
+    margin-bottom: 40px;
+}
+
+.ant-form-item:nth-child(3) {
+    margin-right: 10px;
+    max-width: 70%;
+}
+
+.ant-form-item:nth-child(4) {
+    min-width: 22%;
+}
+
+.ant-form-item:nth-child(3), .ant-form-item:nth-child(4) {
+    display: inline-block;
+}
+.ant-form {
+    text-align: left;
+}
+

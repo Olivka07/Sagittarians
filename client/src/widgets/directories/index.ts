@@ -1,0 +1,1 @@
+export {DirectoryTypeProduct} from './ui/DirectoryTypeProduct'

@@ -1,0 +1,13 @@
+{
+    "port": 5000,
+    "pg": {
+        "user": "postgres",
+        "password": "root",
+        "host": "localhost",
+        "port": 5432,
+        "database": "SagittariansDB"
+    },
+    "JWT_ACCESS_SECRET": "cristiano ronaldo better then messi",
+    "JWT_REFRESH_SECRET": "messi the worst player in the world",
+    "URL_CLIENT": "http://localhost:3000"
+}

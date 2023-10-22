@@ -1,0 +1,17 @@
+.card__container {
+    display: block;
+}
+
+.ant-card-cover {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-card-meta-description {
+    color: rgb(0, 0, 0) !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
+}

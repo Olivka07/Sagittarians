@@ -1,0 +1,18 @@
+.message__container {
+    position: fixed;
+    z-index: 1001;
+    box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+    top: 20px;
+    left: 50%;
+    font-size: 24px;
+    font-family: sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    transform: translate(-50%, 0);
+    background-color: rgb(14, 24, 77);
+    color: rgb(205, 200, 33);
+}
+
+/* @keyframes  {
+    
+} */
