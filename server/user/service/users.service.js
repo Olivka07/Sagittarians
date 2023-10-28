@@ -7,9 +7,24 @@ class UsersService {
         return candidate.rows[0]
     }
 
-    async getAllUsers() {
-        const users = await db.query(`SELECT * FROM "User"`)
-        return users.rows
+    async getAllUsers(role) {
+        if (role) {
+            const users = await db.query(`SELECT * FROM "User" where user_role = '${role}'`)
+            return users.rows.map((el) => {
+                return {
+                    ...el,
+                    birthdate: el.birthdate ? el.birthdate.toLocaleString('tr-TR').split(' ')[0] : null
+                }
+            })
+        }
+    }
+
+    async deleteUser(id_user) {
+        await db.query(`
+            DELETE FROM "User" 
+            WHERE id_user = ${id_user}
+        `)
+        return id_user
     }
 }
 

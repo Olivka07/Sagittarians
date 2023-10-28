@@ -11,6 +11,9 @@ const ProductPage = Loadable(lazy(() => import('pages/product')))
 const Page404 = Loadable(lazy(() => import('pages/page-404')))
 const DirectoriesPage = Loadable(lazy(() => import('pages/directories')))
 const BasketPage = Loadable(lazy(() => import('pages/basket')))
+const OrdersPage = Loadable(lazy(() => import('pages/order')))
+const OrderPage = Loadable(lazy(() => import('pages/order/ui/OrderPage')))
+const SellerForAdminPage = Loadable(lazy(() => import('pages/seller-for-admin')))
 
 export const RoutesApp = () => {
     const auth = useStore($auth)
@@ -27,12 +30,15 @@ export const RoutesApp = () => {
         return new Map<ROLES, any>([
             [ROLES.ADMIN, ( 
                 <Routes>
+                    <Route path='/sellers' element={<SellerForAdminPage/>}/>
                     <Route path='/directories' element={<DirectoriesPage/>}/>
                     {commonRoutes}
                 </Routes>
             )],
             [ROLES.CLIENT, ( 
                 <Routes>
+                    <Route path='/orders/:id_order' element={<OrderPage/>}/>
+                    <Route path='/orders' element={<OrdersPage/>}/>
                     <Route path='/basket' element={<BasketPage/>}/>
                     {commonRoutes}
                 </Routes>

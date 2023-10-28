@@ -1,0 +1,13 @@
+.seller-item__delete {
+    padding: 0 10px;
+    border: 0;
+    font-size: 20px;
+    background-color: rgb(249, 245, 4);
+    font-weight: 600;
+}
+
+.seller-item__delete:hover {
+    color: black !important;
+    border: 0 !important;
+    box-shadow: 0px 0px 7px 0px black;
+}

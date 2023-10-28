@@ -40,6 +40,7 @@ export const HeaderPage: FC<PropsWithChildren> = () => {
         ]],
         [ROLES.ADMIN, [
             {lable: 'Каталог', onClick: () => {}, to: PATH_PAGE.root},
+            {lable: 'Продавцы', onClick: () => {}, to: '/sellers'},
             {lable: 'Справочники', onClick: () => {}, to: '/directories'},
             {lable: 'Выйти',  onClick: () => fetchLogoutFx(), to: PATH_PAGE.root},
         ]],

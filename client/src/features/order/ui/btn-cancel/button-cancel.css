@@ -1,0 +1,14 @@
+.order-item__btn-cancel {
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    box-shadow: 1px 1px 1px 1px rgb(60, 10, 10);
+    color: red;
+    background-color: rgb(249, 158, 158);
+}
+
+.order-item__btn-cancel:hover {
+    color: rgb(241, 129, 129) !important;
+    background-color: rgb(91, 16, 16);
+}

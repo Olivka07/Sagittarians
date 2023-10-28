@@ -19,11 +19,11 @@ export const AuthModal = () => {
     const buttons = useMemo(() => {
         if (registry) {
             return [
-                <RegistryButton toggle={toggle} form={form} key={'Регистрация'}/>
+                <RegistryButton toggle={toggle} form={form} key={'регр'}/>
             ]
         }
         return [
-            <AuthButton toggle={toggle} form={form} key={'Авторизация'}/>
+            <AuthButton toggle={toggle} form={form} key={'автор'}/>
         ]
     }, [registry])
     return (
@@ -70,8 +70,8 @@ export const AuthModal = () => {
                     {
                         registry &&
                             <>
-                                <NameInput/> 
                                 <SurnameInput/>
+                                <NameInput/> 
                             </>
                     }
                     <LoginInput/>

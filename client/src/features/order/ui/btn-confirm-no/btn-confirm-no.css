@@ -1,0 +1,6 @@
+.order-item__confirmno {
+    font-weight: 600;
+    padding: 0px 40px !important;
+    grid-column: 4/5;
+    justify-self: center;
+}

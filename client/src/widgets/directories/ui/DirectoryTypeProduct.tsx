@@ -9,20 +9,20 @@ export const DirectoryTypeProduct = () => {
 
     const typesProducts = useStore($typesProducts)
 
-    const update = (params: DataType[]) => {
-        fetchUpdateTypesProductFx({
+    const update = async(params: DataType[]) => {
+        await fetchUpdateTypesProductFx({
             updateTypes: params.map((el) => ({type_product: el.name, id_type_product: el.id}))
         })
     }
 
-    const add = (params: DataType[]) => {
-        fetchAddTypesProductFx({
+    const add = async (params: DataType[]) => {
+        await fetchAddTypesProductFx({
             addTypes: params.map((el) => ({type_product: el.name, id_type_product: el.id}))
         })
     }
 
-    const deleteTypes = (params: DataType[]) => {
-        fetchDeleteTypesProductFx({
+    const deleteTypes = async (params: DataType[]) => {
+        await fetchDeleteTypesProductFx({
             deleteTypes: params.map((el) => ({type_product: el.name, id_type_product: el.id}))
         })
     }

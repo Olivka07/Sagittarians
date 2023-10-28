@@ -24,6 +24,10 @@ app.use('/api', require('./routes/product.routes.js'))
 app.use('/api', require('./routes/user.routes.js'))
 app.use('/api', require('./routes/products-types.routes.js'))
 app.use('/api', require('./routes/products-types-of-weight.routes.js'))
+app.use('/api', require('./routes/basket.routes.js'))
+app.use('/api', require('./routes/order.routes.js'))
+app.use('/api', require('./routes/timetable.routes.js'))
+
 app.use(errorMiddleware)
 
 

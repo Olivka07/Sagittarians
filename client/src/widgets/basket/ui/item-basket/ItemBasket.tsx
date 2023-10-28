@@ -19,7 +19,7 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
             setProduct(itemBasket)
         }
         setLoad(false)
-    }, [])
+    }, [itemBasket])
 
     const deleteBtn = () => {
         basketStore.deleteProductFromBasket(product!.id_product)
@@ -32,10 +32,10 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
     return (
         <>
             {load && <Spinner/>}
-            {!load && <li className='item-basket__container'>
+            {!load && <li className={`item-basket__container`}>
                 {product ?
                     <Row 
-                        className='item-basket__grid'
+                        className={`item-basket__grid ${product?.warning ? 'item-basket__warning':''}`}
                     >
                         <Col
                             span={6}
@@ -57,12 +57,14 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
                                 }
                             />
                         </Col>
-                        {/* <img className='item-basket__image' src={product.path_image_product} /> */}
                         <Col
                             span={8}
                             className='item-basket__meta'
                         >
-                            <div>{product.title_product}</div>
+                            <div>
+                                <span>{product.title_product}</span>
+                                <span>{product?.warning ? ' (Такое количество товара уже недоступно)':''}</span>
+                            </div>
                             <div>{`Количество: ${itemBasket.weight} ${product.name_type.toLowerCase()}.`}</div>
                             <div>{`Цена: ${itemBasket.price} руб.`}</div>
                         </Col>

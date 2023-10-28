@@ -1,0 +1,36 @@
+.seller-for-admin__btn {
+    margin-right: 20px;
+    background-color: rgb(159, 29, 85);
+    color: rgb(177, 252, 1);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px 20px;
+    box-shadow: 5px 2px 7px 1px green;
+    border: 0;
+}
+
+.seller-for-admin__btn:hover {
+    background-color: rgb(107, 20, 58);
+    color: rgb(112, 157, 8) !important;
+    box-shadow: 5px 2px 7px 1px rgb(4, 81, 4);
+    border: 0 !important;
+    /* animation: scalebtn 1s linear; */
+    transform: scale(1.1);
+}
+
+.seller-for-admin__btn:disabled {
+    background-color: rgb(238, 45, 129);
+    color: rgb(58, 253, 4) !important;
+    box-shadow: 5px 2px 7px 1px rgb(187, 242, 187);
+    border: 0 !important;
+    /* animation: scalebtn 1s linear; */
+}
+
+/* @keyframes scalebtn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+} */

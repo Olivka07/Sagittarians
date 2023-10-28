@@ -48,3 +48,13 @@
     box-shadow: 1px 0px 16px 1px #53103a;
     border: 0 !important;
 }
+
+.item-basket__warning {
+    background-color: rgb(246, 132, 132);
+}
+
+.item-basket__meta div:nth-child(1) span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 600;
+    color: red;
+}

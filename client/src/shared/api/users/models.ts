@@ -7,6 +7,7 @@ export interface IUserDto {
     password: string
     linkactivated: string
     user_role: ROLES
+    birthdate: Date
 }
 
 export interface LoginParams {
@@ -28,4 +29,5 @@ export interface RegistrationParams {
     name: string
     user_role: ROLES
     surname: string
+    birthdate?: Date
 }

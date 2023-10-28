@@ -1,6 +1,6 @@
 import axios from "axios"
 import { DataServerUser, apiInstance } from "../base"
-import {IUserDto, LoginParams, RegistrationParams} from './models'
+import {IUserDto, LoginParams, ROLES, RegistrationParams} from './models'
 import { API_URL } from "shared/config"
 
 
@@ -30,7 +30,17 @@ export const registration = async(
     params: RegistrationParams
 ): Promise<IUserDto> => {  
     const {user, accessToken} = await apiInstance.post<DataServerUser>('/auth/registration', params)
-    localStorage.setItem('token', accessToken)
-    localStorage.setItem('role', user.user_role)
+    if (user.user_role!==ROLES.SELLER) {
+        localStorage.setItem('token', accessToken)
+        localStorage.setItem('role', user.user_role)
+    }
     return user
+}
+
+export const getSellers = async (): Promise<IUserDto[]> => {
+    return apiInstance.get(`/users?role=${ROLES.SELLER}`)
+}
+
+export const deleteSeller = async (id_user:number): Promise<number> => {
+    return apiInstance.delete(`/users?id_user=${id_user}`)
 }

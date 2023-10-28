@@ -1,0 +1,14 @@
+.order-item__confirmyes {
+    grid-column: 1/2;
+    justify-self: center;
+    background-color: rgb(245, 205, 205);
+    color: rgb(255, 5, 5);
+    font-weight: 600;
+    padding: 0px 40px !important;
+}
+
+.order-item__confirmyes:hover {
+    background-color: rgb(255, 0, 0) !important;
+    color: rgb(241, 211, 211) !important;
+    border: 0;
+}

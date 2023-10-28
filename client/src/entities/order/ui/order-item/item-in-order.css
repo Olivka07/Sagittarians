@@ -1,0 +1,29 @@
+.item-in-order__container {
+    display: flex;
+    color: rgb(252, 201, 253);
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.item-in-order__header {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.item-in-order__meta {
+    display: flex;
+    align-items: center;
+}
+
+.item-in-order__item {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.item-in-order__container:last-child {
+    margin: 0;
+}

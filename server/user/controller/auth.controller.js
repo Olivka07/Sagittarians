@@ -8,9 +8,11 @@ class AuthController {
         try {
             const errors = validationResult(req)
             if (!errors.isEmpty()) return next(ApiError.BadRequestError('Ошибка валидации', errors.array()))
-            const {name, surname, login, password, email, user_role} = req.body
-            const userData = await authService.registration(name, surname, login, password, email, user_role)
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true, secure: true})
+            const {name, surname, login, password, email, user_role, birthdate} = req.body
+            const userData = await authService.registration(name, surname, login, password, email, user_role, birthdate)
+            if (!birthdate) {
+                res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true, secure: true})
+            }
             res.status(201).json(userData)
         } catch (e) {
             next(e)

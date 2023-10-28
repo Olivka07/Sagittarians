@@ -1,0 +1,173 @@
+.seller-for-admin__container {
+    margin: 40px;
+
+}
+
+.seller-for-admin__workcontainer {
+    margin-top: 60px;
+}
+
+.seller-for-admin__openmodal {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 15px;
+    box-shadow: 0px 0px 7px 0px white;
+    border: 0;
+}
+
+.seller-for-admin__openmodal:hover {
+    color: rgb(162, 162, 162) !important;
+    box-shadow: 0px 0px 7px 0px rgb(154, 153, 153);
+    border: 0 !important;
+}
+
+.seller-for-admin__deleteyes {
+    background-color: rgb(35, 34, 34);
+    color: white;
+    grid-column: 1/2;
+    padding: 0 50px !important;
+    width: 100%;
+    justify-self: center;
+}
+
+.seller-for-admin__deleteno {
+    grid-column: 4/5;
+    width: 100%;
+    justify-self: center;
+}
+
+.seller-for-admin__deleteno:hover, .seller-for-admin__deleteyes:hover {
+    border: 0 !important;
+    color: rgb(167, 167, 167) !important;
+    box-shadow: 0px 0px 7px 0px black;
+}
+
+
+
+
+/*  ----------------------------------------------------------------------------------------- */
+
+.timetable__container {
+    display: grid;
+    grid-template-areas: 'timetable basket';
+    grid-template-columns: 7fr 3fr;
+}
+
+.timetable__grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(7, 1fr);
+    grid-area: timetable;
+}
+
+.timetable__row {
+    display: flex;
+}
+
+.timetable__ceil {
+    width: 160px;
+    padding: 10px;
+    height: 160px;
+    box-shadow: 0px 0px 7px 0px rgb(226 220 217);
+    background-color: rgb(107, 9, 102);
+    margin: 5px;
+    /* border: 2px solid rgb(0, 191, 255); */
+}
+
+.basket-sellers {
+    box-shadow: 0px 0px 10px 1px rgb(229, 255, 0);
+    border-radius: 10px;
+    padding: 20px;
+    position: fixed;
+    left: 100vw;
+    top: 50%;
+    transform: translate(-115%, -50%);
+}
+
+.basket-sellers__ceil {
+    background-color: rgb(253, 253, 253);
+    color: rgb(103, 16, 99);
+    font-weight:600;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px rgb(143, 208, 243);
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.basket-sellers__ceil:last-child {
+    margin: 0;
+}
+
+
+.timetable__seller {
+    text-align: center;
+    position: relative;
+    background-color: rgb(253, 253, 253);
+    color: rgb(103, 16, 99);
+    font-weight:500;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px rgb(143, 208, 243);
+    padding: 2px 5px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.timetable__seller:hover {
+    cursor: pointer;
+}
+
+.basket-sellers__ceil:hover {
+    cursor: pointer;
+}
+
+.timetable__metatime {
+    background-color: rgb(149, 250, 148);
+    border-radius: 10px;
+    color: rgb(13, 10, 55);
+    padding: 5px;
+    bottom: 105%;
+    position: absolute;
+}
+
+.timetable__featuresadmin {
+    margin: 50px 0px;
+    align-items: center;
+}
+
+.timetable__featuresadmin .ant-form-item-label label{
+    font-weight: 600;
+    font-size: 16px;
+    color: rgb(246, 207, 241);
+}
+
+.timetable__weekday {
+    justify-self: center;
+    font-size: 15px;
+    color: pink;
+    font-weight: 600;
+}
+
+.timetable__ceil_noactive {
+    background-color: rgb(230, 184, 248);
+}
+
+.timetable__dateinceil {
+    color: rgb(255, 0, 200);
+}
+
+.timetable__containerbtns {
+    margin-left: 40%;
+}
+
+.timetable__warningsave {
+    height: 100%;
+    color: red;
+    font-size: 20px;
+}
+
+.timetable__featuresadmin .ant-form-item {
+    margin: 0 !important;
+}

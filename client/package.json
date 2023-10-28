@@ -15,6 +15,7 @@
     "antd": "^5.9.4",
     "axios": "^1.5.1",
     "compose-function": "^3.0.3",
+    "dayjs": "^1.11.10",
     "effector": "^22.8.7",
     "effector-react": "^22.5.4",
     "patronum": "^1.19.2",

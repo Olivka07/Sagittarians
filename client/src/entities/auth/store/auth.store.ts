@@ -45,7 +45,12 @@ export const fetchRegistrationFx = createEffect('Fetch registration', {
 
 export const changeAuth = createEvent<ROLES>()
 const func = () => {
-    return localStorage.getItem('role') as ROLES
+    const auth = localStorage.getItem('role') as ROLES
+    if (!auth) {
+        localStorage.setItem('role', ROLES.NO_AUTHORIZED)
+        return ROLES.NO_AUTHORIZED
+    }
+    return auth
 }
 export const $auth = createStore<ROLES>(func())
     .on(changeAuth, (_, payload) => {
@@ -66,8 +71,10 @@ export const $auth = createStore<ROLES>(func())
     .on(fetchLogoutFx.doneData, () => {
         return ROLES.NO_AUTHORIZED
     })
-    .on(fetchRegistrationFx.doneData, (_, payload) => {
-        console.log('sdf')
+    .on(fetchRegistrationFx.doneData, (state, payload) => {
+        if (payload.user_role === ROLES.SELLER) {
+            return state
+        }
         return payload.user_role
     })
 
@@ -76,14 +83,12 @@ export const $user = createStore<IUserDto>({} as IUserDto)
         return payload
     })
     .on(fetchLoginFx.failData, (_, payload) => {
-        console.log('payload fetchLoginFx', payload)
         return {} as IUserDto
     })
     .on(fetchRefreshTokenFx.doneData, (_, payload) => {
         return payload
     })
     .on(fetchRefreshTokenFx.failData, (_, payload) => {
-        console.log('payload fetchRefreshTokenFx', payload)
         return {} as IUserDto
     })
     .on(fetchLogoutFx.doneData, () => {

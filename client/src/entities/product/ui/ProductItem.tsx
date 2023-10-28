@@ -10,9 +10,6 @@ interface ProductItemProps extends PropsWithChildren {
     product: IProduct
 }
 export const ProductItem:FC<ProductItemProps> = ({product, children}) => {
-
-    
-
     return (
         <Row 
             justify={'center'} 

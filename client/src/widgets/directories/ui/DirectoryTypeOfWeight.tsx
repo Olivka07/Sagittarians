@@ -9,20 +9,20 @@ export const DirectoryTypeOfWeight = () => {
 
     const typesOfWeight = useStore($typesOfWeight)
 
-    const update = (params: DataType[]) => {
-        fetchUpdateTypesOfWeightProductFx({
+    const update = async (params: DataType[]) => {
+        await fetchUpdateTypesOfWeightProductFx({
             updateTypes: params.map((el) => ({name_type: el.name, id_type: el.id}))
         })
     }
 
-    const add = (params: DataType[]) => {
-        fetchAddTypesOfWeightProductFx({
+    const add = async (params: DataType[]) => {
+        await fetchAddTypesOfWeightProductFx({
             addTypes: params.map((el) => ({name_type: el.name, id_type: el.id}))
         })
     }
 
-    const deleteTypes = (params: DataType[]) => {
-        fetchDeleteTypesOfWeightProductFx({
+    const deleteTypes = async (params: DataType[]) => {
+        await fetchDeleteTypesOfWeightProductFx({
             deleteTypes: params.map((el) => ({name_type: el.name, id_type: el.id}))
         })
     }

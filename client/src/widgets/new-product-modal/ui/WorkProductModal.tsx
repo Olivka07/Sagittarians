@@ -101,6 +101,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
                     ]}
                 >
                     <Form 
+                        className='work-with-product__form'
                         form={form}
                         name={`validateOnly${Date.now()}`}
                     >
@@ -108,7 +109,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
                         <CategorySelect/>
                         <PriceInput/>
                         <MeasuringSelect/>
-                        <CountInput/>
+                        <CountInput form={form}/>
                         <PictureInput form={form}/>
                     </Form>
                 </ModalWindow>

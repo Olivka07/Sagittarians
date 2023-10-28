@@ -1,0 +1,14 @@
+.order-item__btn-delete {
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    box-shadow: 1px 1px 1px 1px rgb(10, 10, 60);
+    color: rgb(10, 10, 129);
+    background-color: rgb(192, 192, 255);
+}
+
+.order-item__btn-delete:hover {
+    color: rgb(164, 164, 236) !important;
+    background-color: rgb(22, 22, 111);
+}

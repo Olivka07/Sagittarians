@@ -7,7 +7,6 @@ import { productsGate } from 'entities/product/model/store'
 
 const App = () => {
     const {fetchRefreshTokenFx} = authStore
-    useGate(productsGate)
     useEffect(() => {
         if (localStorage.getItem('token'))
             fetchRefreshTokenFx()

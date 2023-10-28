@@ -1,0 +1,17 @@
+.order-list__ul {
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: inherit;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.order-list__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}

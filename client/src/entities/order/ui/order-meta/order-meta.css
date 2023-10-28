@@ -1,0 +1,27 @@
+.order-meta__container {
+    margin: 30px 0px;
+    align-self: flex-start;
+}
+
+.order-meta__container div{
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.order-meta__container div:first-child{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.order-meta__status_given {
+    color: green;
+}
+
+.order-meta__status_pending {
+    color: yellow;
+}
+
+.order-meta__span {
+    color: pink;
+}

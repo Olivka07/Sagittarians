@@ -7,9 +7,11 @@ import { HeaderPage } from "widgets/header/ui"
 import { SearchString } from "features/product/ui"
 import { AuthModal } from "widgets/auth-modal/ui"
 import { useGate } from "effector-react"
+import { fetchProductListFx, productsGate } from "entities/product/model/store"
 
 
 export const CatalogPage:FC = () => {
+    useGate(productsGate)
     const {Content} = Layout
     return (
         <LayoutPage>

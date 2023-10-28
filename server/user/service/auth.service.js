@@ -20,20 +20,22 @@ class AuthService {
         return candidate.rows[0]
     }
 
-    async registration(name, surname, login, password, email = '', user_role='') {
+    async registration(name, surname, login, password, email = '', user_role='', birthdate = '') {
         const isReg = await this.isRegistred(login, email)
         if (isReg) throw ApiError.BadRequestError('Пользователь с таким логином или email уже зарегистрирован')
         const hashPassword = await bcrypt.hash(password, 5)
         const activateLink = uuid.v4()
-        const newUser = await db.query(`SELECT * from public."createUserFunc"(
+        const str = `SELECT * from public."createUserFunc"(
             '${name}',
             '${surname}',
             '${login}', 
             '${hashPassword}',
             '${email ? email: ''}',
             '${email ? activateLink: ''}',
-            '${user_role ? user_role : 'Client'}'
-        )`)
+            '${user_role ? user_role : 'Client'}',
+            ${birthdate ? `'${birthdate}'` : null}
+        )`
+        const newUser = await db.query(str)
         const userDto = new UserDto(newUser.rows[0])
         const tokens = tokenService.generateTokens({...userDto}) 
         await tokenService.saveToken(userDto.id_user, tokens.refreshToken)

@@ -4,6 +4,8 @@ import { CellDirectory } from './CellDirectory';
 import { Button } from 'shared/ui/button';
 import { RowDirectoryContext } from '../lib/context';
 import { IUpdateTypesProduct } from 'shared/api/products/models';
+import { useModal } from 'shared/lib/hooks/modal.hook';
+import Message from 'shared/ui/message/Message';
 
 export interface DirectoryItem {
     name: string
@@ -22,15 +24,15 @@ type ColumnTypes = Exclude<EditableTableProps['columns'], undefined>;
 interface DirectoryProps {
     data: DataType[]
     title: string
-    updateInDirectoryApi: (params: DataType[]) => void 
-    addInDirectoryApi: (params: DataType[]) => void 
-    deleteFromDirectoryApi: (params: DataType[]) => void 
+    updateInDirectoryApi: (params: DataType[]) => Promise<void>
+    addInDirectoryApi: (params: DataType[]) => Promise<void>
+    deleteFromDirectoryApi: (params: DataType[]) => Promise<void> 
 }
 
 export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi, addInDirectoryApi, deleteFromDirectoryApi}) => {
     const [dataSource, setDataSource] = useState<DataType[]>([])
     const [warning, setWarning] = useState('')
-
+    const {modal, toggle} = useModal()
     useEffect(() => {
       setDataSource(data)
     }, [data])
@@ -138,35 +140,41 @@ export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi
     setDataSource(newData);
   };
 
-  const handleSaveAll = () => {
-    const updateMassiv = []
-    const deleteMassiv = []
-    const addMassiv = []
+  const handleSaveAll = async() => {
+    try {
+      const updateMassiv = []
+      const deleteMassiv = []
+      const addMassiv = []
 
-    for (let i = 0; i<dataSource.length; i++) {
-      let item = dataSource[i]
-      const check = data.find((el) => el.id === item.id) || null
-      if (check && check.name !== item.name) {
-        updateMassiv.push(item)
-      } else if (!check){
-        addMassiv.push(item)
+      for (let i = 0; i<dataSource.length; i++) {
+        let item = dataSource[i]
+        const check = data.find((el) => el.id === item.id) || null
+        if (check && check.name !== item.name) {
+          updateMassiv.push(item)
+        } else if (!check){
+          addMassiv.push(item)
+        }
       }
-    }
-    for (let i = 0; i<data.length; i++) {
-      const item = data[i]
-      if (!dataSource.find((el) => el.id === item.id)) {
-        deleteMassiv.push(item)
+      for (let i = 0; i<data.length; i++) {
+        const item = data[i]
+        if (!dataSource.find((el) => el.id === item.id)) {
+          deleteMassiv.push(item)
+        }
       }
+      if (updateMassiv.length!==0) {
+        await updateInDirectoryApi(updateMassiv)
+      }
+      if (addMassiv.length!==0) {
+        await addInDirectoryApi(addMassiv)
+      }
+      if (deleteMassiv.length!==0) {
+        await deleteFromDirectoryApi(deleteMassiv)
+      }
+      toggle(`Сохранение справочника "${title}" прошло успешно`)
+    } catch(e) {
+      toggle(`При сохранении справочника "${title}" произошла ошибка`)
     }
-    if (updateMassiv.length!==0) {
-      updateInDirectoryApi(updateMassiv)
-    }
-    if (addMassiv.length!==0) {
-      addInDirectoryApi(addMassiv)
-    }
-    if (deleteMassiv.length!==0) {
-      deleteFromDirectoryApi(deleteMassiv)
-    }
+    
   };
 
   const components = {
@@ -195,6 +203,7 @@ export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi
 
   return (
     <Col span={8}>
+      {modal && <Message>{modal}</Message>}
         <h2 className='dict__header'>{`Справочник "${title}"`}</h2>
         {warning && <div className='dict__warning'>&#128165;{warning}</div>}
         <Button onClick={handleAdd} text='Добавить' className='button_add'/>

@@ -15,6 +15,7 @@ import { basketStore } from 'entities/basket';
 import { useModal } from 'shared/lib/hooks/modal.hook';
 import Message from 'shared/ui/message/Message';
 import { Form } from 'antd';
+import { IBasketProduct } from 'shared/api/basket/models';
 
 
 interface BuyProductProps {
@@ -49,9 +50,10 @@ export const BuyProduct:FC<BuyProductProps> = ({product_id}) => {
                 name_type: product!.name_type
             }
             basketStore.addProductInBasket(item)
-            const basket = localStorage.getItem('basket')
-            if (basket) {
-                localStorage.setItem('basket', JSON.stringify([...JSON.parse(basket)!, item]))
+            const basketStr = localStorage.getItem('basket')
+            const basket:IBasketProduct[] = basketStr ? JSON.parse(basketStr) : []
+            if (basket.length>0) {
+                localStorage.setItem('basket', JSON.stringify([...basket.filter((el) => el.id_product !== item.id_product), item]))
             } else {
                 localStorage.setItem('basket', JSON.stringify([item]))
             }
