@@ -9,7 +9,7 @@ class BasketService {
         if (!userData) throw ApiError.UnAuthorizedError()
         const ordersInProceccesRows = await db.query(`
             SELECT * FROM "Order"
-            WHERE id_user=${userData.id_user} AND isgiven=${false}
+            WHERE id_user=${userData.id_user} AND (isgiven=${false} AND reason IS NULL)
         `)
         if (ordersInProceccesRows.rows.length>0) {
             return false

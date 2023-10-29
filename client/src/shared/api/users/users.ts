@@ -37,8 +37,12 @@ export const registration = async(
     return user
 }
 
+// export const getSellers = async (): Promise<IUserDto[]> => {
+//     return apiInstance.get(`/users?role=${ROLES.SELLER}`)
+// }
+
 export const getSellers = async (): Promise<IUserDto[]> => {
-    return apiInstance.get(`/users?role=${ROLES.SELLER}`)
+    return apiInstance.get(`/sellers`)
 }
 
 export const deleteSeller = async (id_user:number): Promise<number> => {

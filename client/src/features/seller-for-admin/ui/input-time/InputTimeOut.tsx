@@ -1,5 +1,5 @@
 import { Form, Input } from 'antd';
-import React from 'react';
+import React, { FC } from 'react';
 
 const {Item} = Form
 
@@ -7,9 +7,13 @@ type FieldType = {
     time_out?: string;
 };
 
-export const InputTimeOut = () => {
+interface InputTimeOutProps {
+    time_out: string
+}
+export const InputTimeOut:FC<InputTimeOutProps> = ({time_out}) => {
     return (
         <Item<FieldType>
+            initialValue={time_out}
             label="Окончание рабочего дня: "
             name="time_out"
             rules={[{ 

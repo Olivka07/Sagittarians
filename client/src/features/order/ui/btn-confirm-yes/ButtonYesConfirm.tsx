@@ -5,11 +5,14 @@ import './btn-confirm-yes.css'
 
 interface ButtonYesConfirmProps {
     onClick: () => void
+    text?: string
+    disabled?: boolean
 }
-export const ButtonYesConfirm:FC<ButtonYesConfirmProps> = ({onClick}) => {
+export const ButtonYesConfirm:FC<ButtonYesConfirmProps> = ({onClick, text, disabled}) => {
     return (
         <Button
-            text='Да'
+            disabled={disabled? disabled : false}
+            text={`${text? text: 'Да'}`}
             onClick={onClick}
             className='order-item__confirmyes'
         />

@@ -1,3 +1,17 @@
 .timetable__savetimetable {
-    background-color: rgb(210, 252, 210);
+    background-color: rgb(118, 245, 118);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border: 0;
+}
+
+.timetable__savetimetable:disabled {
+    background-color: rgb(179, 217, 246);
+}
+
+.timetable__savetimetable:hover:enabled {
+    color: green !important;
+    background-color: rgb(205, 243, 205);
+    transform: scale(1.1);
 }

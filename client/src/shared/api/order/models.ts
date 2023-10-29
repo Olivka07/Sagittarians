@@ -3,6 +3,9 @@ export interface IOrder {
     isgiven: boolean
     date_take_order: string
     price_order: number
+    reason: string
+    name?: string
+    surname?: string
 }
 
 export interface IOrderProduct {

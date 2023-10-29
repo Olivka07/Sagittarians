@@ -10,6 +10,6 @@ router.get('/timetable', authAdminSellerMiddleware, timetableController.getTimet
 
 // Запрос на добавление раписания на месяц года
 // /api/timetable
-router.post('/timetable', authAdminSellerMiddleware, timetableController.getTimetable)
+router.post('/timetable', authAdminSellerMiddleware, timetableController.saveTimetable)
 
 module.exports = router

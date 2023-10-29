@@ -8,7 +8,7 @@ class OrderService {
         const userData = tokenService.validateRefreshToken(refreshToken)
         if (!userData) throw ApiError.UnAuthorizedError() // userData.id_user
         const candidate = await db.query(`
-            SELECT id_order, date_take_order, isgiven, price_order
+            SELECT id_order, date_take_order, isgiven, price_order, reason
             FROM "Order"
             where id_user = ${userData.id_user}
             ORDER BY date_take_order desc
@@ -21,7 +21,33 @@ class OrderService {
         })
     }
 
-    async deleteOrder(id_order, active) {
+    async getOrdersForSellersAndAdmin (refreshToken) {
+        if (!refreshToken) throw ApiError.UnAuthorizedError()
+        const userData = tokenService.validateRefreshToken(refreshToken)
+        if (!userData) throw ApiError.UnAuthorizedError() // userData.id_user
+        const dateNow = new Date(Date.now()) // Сегодняшняя дата
+        const dateLast = new Date(Date.now()-86400000*3) // Дата 3 дня назад
+        const strDelete = `
+            DELETE FROM "Order"
+            WHERE date_take_order <='${dateLast.toLocaleDateString('tr-TR')}'
+        `
+        await db.query(strDelete)
+        const str = `
+            select id_order, date_take_order, isgiven, price_order, reason, surname, name
+            from "Order"
+            left join "User" on "User".id_user="Order".id_user
+            ORDER BY date_take_order asc
+        `
+        const candidate = await db.query(str)
+        return candidate.rows.map((el) => {
+            return {
+                ...el,
+                date_take_order: el.date_take_order.toLocaleString('tr-TR')
+            }
+        })
+    }
+
+    async deleteOrder(id_order, active, meta = null) {
         if (active==='cancel') {
             const rowsIds = await db.query(`
                 SELECT id_product,weight from "Cart"
@@ -39,6 +65,7 @@ class OrderService {
                 }
             } 
         }
+        if (meta) return 
         await db.query(`
             DELETE FROM "Order"
             WHERE id_order=${id_order}
@@ -53,13 +80,57 @@ class OrderService {
             WHERE id_order = ${id_order}
         `)
         const orderMeta = await db.query(`
-            select id_order, date_take_order, isgiven, price_order
+            select id_order, date_take_order, isgiven, price_order, reason
             from "Order"
             where id_order = ${id_order}
         `)
         return {order:order.rows, orderMeta: {
             ...orderMeta.rows[0], date_take_order: orderMeta.rows[0].date_take_order.toLocaleString('tr-TR')
         }}
+    }
+
+    async getOrderForSellerById(id_order) {
+        const order = await db.query(`
+            SELECT title_product, price, weight, name_type
+            FROM "Cart"
+            WHERE id_order = ${id_order}
+        `)
+        const orderMeta = await db.query(`
+            select id_order, date_take_order, isgiven, price_order, reason, surname, name
+            from "Order"
+            left join "User" on "User".id_user="Order".id_user
+            where id_order = ${id_order}
+        `)
+        return {order:order.rows, orderMeta: {
+            ...orderMeta.rows[0], date_take_order: orderMeta.rows[0].date_take_order.toLocaleString('tr-TR')
+        }}
+    }
+
+    async giveOrder(id_order) {
+        await db.query(`
+            UPDATE "Order"
+            SET isgiven=${true}
+            WHERE id_order = ${id_order}
+        `)
+        const order = await db.query(`
+            select id_order, date_take_order, isgiven, price_order, reason, surname, name
+            from "Order"
+            left join "User" on "User".id_user="Order".id_user
+            where id_order = ${id_order}
+        `)
+        return {
+            ...order.rows[0],
+            date_take_order: order.rows[0].date_take_order.toLocaleString('tr-TR')
+        }
+    }
+
+    async setReasonOrderForSellersAndAdmin(id_order, reason) {
+        await db.query(`
+            UPDATE "Order" SET reason = '${reason}'
+            where id_order = ${id_order}
+        `)
+        await this.deleteOrder(id_order, 'cancel', 'without_delete_order')
+        return await this.getOrderForSellerById(id_order)
     }
 }
 

@@ -12,8 +12,12 @@ const Page404 = Loadable(lazy(() => import('pages/page-404')))
 const DirectoriesPage = Loadable(lazy(() => import('pages/directories')))
 const BasketPage = Loadable(lazy(() => import('pages/basket')))
 const OrdersPage = Loadable(lazy(() => import('pages/order')))
-const OrderPage = Loadable(lazy(() => import('pages/order/ui/OrderPage')))
+const OrderPage = Loadable(lazy(() => import('pages/order/ui/clients-orders-pages/OrderPage')))
 const SellerForAdminPage = Loadable(lazy(() => import('pages/seller-for-admin')))
+const SellerTimetablePage = Loadable(lazy(() => import('pages/seller-timetable')))
+const OrdersForSellersPage = Loadable(lazy(() => import('pages/order/ui/sellers-orders-pages/OrdersPage')))
+const OrderForSellersPage = Loadable(lazy(() => import('pages/order/ui/sellers-orders-pages/OrderPage')))
+
 
 export const RoutesApp = () => {
     const auth = useStore($auth)
@@ -50,6 +54,9 @@ export const RoutesApp = () => {
             )],
             [ROLES.SELLER, ( 
                 <Routes>
+                    <Route path='/timetable' element={<SellerTimetablePage/>}/>
+                    <Route path='/ordersbyclients' element={<OrdersForSellersPage/>}/>
+                    <Route path='/ordersbyclients/:id_order' element={<OrderForSellersPage/>}/>
                     {commonRoutes}
                 </Routes>
             )]

@@ -10,3 +10,13 @@ export interface ICeil {
     date?: number
     sellers: ISellerDto[]
 }
+
+export interface IObjFromMap {
+    [key:string]: ISellerDto[] 
+}
+
+export interface IMapsWithSellers {
+    masDeleteSellers: IObjFromMap
+    masNewSellers: IObjFromMap
+    masUpdateSellers: IObjFromMap
+}

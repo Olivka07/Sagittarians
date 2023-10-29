@@ -12,17 +12,22 @@ export const OrderMeta:FC<OrderMetaProps> = ({orderMeta}) => {
             <div>{`Дата заказа: `} 
                 <span className='order-meta__span'>{orderMeta.date_take_order}</span>
             </div>
+            {   orderMeta.surname && orderMeta.name &&
+                <div>{`Заказчик: `} 
+                    <span className='order-meta__span'>{orderMeta.surname + ' ' + orderMeta.name}</span>
+                </div>
+            }
             <div>{`Стоимость заказа: `}
                 <span className='order-meta__span'>{`${Number(orderMeta.price_order)} руб.`}</span>
             </div>
             <div 
-                
             >
                 {`Статус: `}
                 <span 
-                    className={`order-meta__status_${orderMeta.isgiven?'given':'pending'}`}
+                    className={`order-meta__status_${orderMeta.reason? 'cancel' :orderMeta.isgiven?'given':'pending'}`}
                 >
-                    {orderMeta.isgiven? 'Получен':'Ожидает'}
+                    {orderMeta.reason && `Заказ отменён по причине: "${orderMeta.reason}"`}
+                    {!orderMeta.reason ? orderMeta.isgiven?'Получен':'Ожидает':''}
                 </span>
             </div>
         </div>

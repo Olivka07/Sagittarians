@@ -18,6 +18,10 @@
     color: green;
 }
 
+.order-meta__status_cancel {
+    color: rgb(173, 18, 4);
+}
+
 .order-meta__status_pending {
     color: yellow;
 }

@@ -1,0 +1,16 @@
+
+
+.order-item-for-seller__btnisgiven {
+    padding: 0px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    box-shadow: 1px 1px 1px 1px rgb(60, 10, 10);
+    color: rgb(27, 216, 58);
+    background-color: rgb(202, 245, 192);
+}
+
+.order-item-for-seller__btnisgiven:hover {
+    color: rgb(129, 241, 138) !important;
+    background-color: rgb(26, 91, 16);
+}

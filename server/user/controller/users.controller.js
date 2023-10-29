@@ -12,6 +12,15 @@ class UserController {
         }
     }
 
+    async getSellers(req, res, next) {
+        try {
+            const users = await usersService.getAllUsers('Seller')
+            res.status(200).json(users)
+        } catch (e) {
+            next(e)
+        }
+    }
+
     async deleteUser(req, res,next) {
         try {
             const id_user = req.query.id_user

@@ -10,17 +10,23 @@ import { useGate } from "effector-react"
 import { DirectoryTypeProduct } from "widgets/directories"
 import { DirectoryTypeOfWeight } from "widgets/directories/ui/DirectoryTypeOfWeight"
 import { OrdersByClients } from "widgets/orders/ui/orders-clients/OrdersByClients"
+import { useParams } from "react-router"
+import { OrderList } from "widgets/order/ui/order-list/OrderList"
+import { OrderListForSeller } from "widgets/order/ui/order-list-for-seller/OrderListForSeller"
 
 
-export const OrdersPage:FC = () => {
+const OrderPage:FC = () => {
     const {Content} = Layout
+    const {id_order} = useParams()
     return (
         <LayoutPage>
             <AuthModal/>
             <HeaderPage/>
             <Content>
-                <OrdersByClients/>
+                <OrderListForSeller id_order={Number(id_order)}/>
             </Content>
         </LayoutPage>
     )
 }
+
+export default OrderPage

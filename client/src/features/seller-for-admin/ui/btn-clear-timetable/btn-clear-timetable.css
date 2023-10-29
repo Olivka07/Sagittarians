@@ -1,3 +1,14 @@
 .timetable__cleartimetable {
-    margin-left: 40px;
+    margin-left: 20px;
+    background-color: rgb(245, 146, 118);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border: 0;
+}
+
+.timetable__cleartimetable:hover {
+    color: rgb(128, 28, 0) !important;
+    background-color: rgb(243, 205, 205);
+    transform: scale(1.1);
 }

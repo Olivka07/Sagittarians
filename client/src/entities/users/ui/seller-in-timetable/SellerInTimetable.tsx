@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { ICeil, ISellerDto } from './model/model';
 import { ModalWindow } from 'shared/ui/modal';
 import { Form } from 'antd';
 import { InputTimeIn } from 'features/seller-for-admin/ui/input-time/InputTimeIn';
@@ -9,6 +8,7 @@ import ButtonSaveTimeForSeller from 'features/seller-for-admin/ui/btn-save-time/
 import { Button } from 'shared/ui/button';
 import { $ceils, changeCeils, changeCurrentCeil, changeCurrentSeller } from 'widgets/seller-for-admin/model/timetable/store';
 import { useStore } from 'effector-react';
+import { ICeil, ISellerDto } from 'shared/api/timetable/models';
 
 interface SellerInTimetableProps {
     seller: ISellerDto
@@ -37,7 +37,6 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
         setChangeModal(prev => !prev)
         changeCurrentSeller(seller)
     }
-
 
     const saveTimeHandler = () => {
         changeCeils!(ceils!.map((c) => {
@@ -98,8 +97,8 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
                     onCancel={() => setChangeModal(prev => !prev)}
                 >
                     <Form form={form}>
-                        <InputTimeIn/>
-                        <InputTimeOut/>
+                        <InputTimeIn time_in={seller.timeStart && seller.timeStart!=='Пусто'? seller.timeStart : ''}/>
+                        <InputTimeOut time_out={seller.timeEnd && seller.timeEnd!=='Пусто'? seller.timeEnd : ''}/>
                     </Form>
                 </ModalWindow>
                 {timeStr && 
@@ -124,7 +123,7 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
         );
         return (
             <>
-                <ModalWindow
+                {/* <ModalWindow
                     buttons={[
                         <ButtonSaveTimeForSeller form={form} key={'savetime'} onClick={saveTimeHandler}/>,
                         <Button key={'canceltime'} onClick={() => setChangeModal(prev => !prev)} text={'Отменить'}/>
@@ -137,16 +136,16 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
                         <InputTimeIn/>
                         <InputTimeOut/>
                     </Form>
-                </ModalWindow>
-                {timeStr && 
+                </ModalWindow> */}
+                {/* {timeStr && 
                     <div className='timetable__metatime'>
                         {timeStr}
                     </div>
-                }
+                } */}
                 <div
-                    onMouseOver={mouseOverHandler}
-                    onMouseLeave={() => setTimeStr(null)}
-                    onDoubleClick={() => doubleClickOnSeller(seller)}
+                    // onMouseOver={mouseOverHandler}
+                    // onMouseLeave={() => setTimeStr(null)}
+                    // onDoubleClick={() => doubleClickOnSeller(seller)}
                     key={seller.id_user}
                     draggable={true}
                     onDragOver={(e) => onDragOverHandler(e)}

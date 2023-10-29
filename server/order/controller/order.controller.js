@@ -10,6 +10,16 @@ class OrderController {
         }
     }
 
+    async getOrdersForSellersAndAdmin(req, res, next) {
+        try {
+            const {refreshToken} = req.cookies
+            const orders = await orderService.getOrdersForSellersAndAdmin(refreshToken)
+            res.status(200).json(orders)
+        } catch(e) {
+            next(e)
+        }
+    }
+
     async deleteOrder(req, res, next) {
         try {
             const id_order = req.query.id_order
@@ -27,6 +37,36 @@ class OrderController {
             const {order, orderMeta} = await orderService.getOrderById(id_order)
             res.status(200).json({order, orderMeta})
         } catch(e) {
+            next(e)
+        }
+    }
+
+    async getOrderForSellerById(req, res,next) {
+        try {
+            const id_order = Number(req.params.id_order)
+            const {order, orderMeta} = await orderService.getOrderForSellerById(id_order)
+            res.status(200).json({order, orderMeta})
+        } catch(e) {
+            next(e)
+        }
+    }
+
+    async giveOrder(req, res, next) {
+        try {
+            const {id_order} = req.body
+            const order = await orderService.giveOrder(id_order)
+            res.status(201).json(order)
+        } catch(e) {
+            next(e)
+        }
+    }
+
+    async setReasonOrderForSellersAndAdmin(req, res, next) {
+        try {
+            const {id_order, reason} = req.body
+            const {order, orderMeta} = await orderService.setReasonOrderForSellersAndAdmin(id_order, reason)
+            res.status(201).json({order, orderMeta})
+        } catch (e) {
             next(e)
         }
     }

@@ -3,8 +3,8 @@ class TimetableController {
     async getTimetable(req, res, next) {
         try {
             const date_timetable = req.query.date_timetable
-            const mapDateSellers = await timetableService.getTimetable(date_timetable)
-            res.status(200).json(mapDateSellers)
+            const objMapDateSellers = await timetableService.getTimetable(date_timetable)
+            res.status(200).json(objMapDateSellers)
         } catch(e) {
             next(e)
         }
@@ -12,10 +12,10 @@ class TimetableController {
 
     async saveTimetable(req, res, next) {
         try {
-            // const ceils = req.
-            const date_timetable = req.query.date_timetable
-            const mapDateSellers = await timetableService.getTimetable(date_timetable)
-            res.status(200).json(mapDateSellers)
+            const {date_timetable, mapsWithSellers} = req.body
+            // console.log(mapsWithSellers.masNewSellers['1'])
+            const objMapDateSellers = await timetableService.saveTimetable(date_timetable, mapsWithSellers)
+            res.status(201).json(objMapDateSellers)
         } catch(e) {
             next(e)
         }

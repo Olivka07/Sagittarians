@@ -7,7 +7,7 @@
     padding: 0px 40px !important;
 }
 
-.order-item__confirmyes:hover {
+.order-item__confirmyes:hover:enabled {
     background-color: rgb(255, 0, 0) !important;
     color: rgb(241, 211, 211) !important;
     border: 0;

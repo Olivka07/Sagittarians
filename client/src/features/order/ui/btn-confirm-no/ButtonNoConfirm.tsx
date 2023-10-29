@@ -4,12 +4,13 @@ import './btn-confirm-no.css'
 
 interface ButtonNoConfirmProps {
     onClick: () => void
+    text?: string
 }
-export const ButtonNoConfirm:FC<ButtonNoConfirmProps> = ({onClick}) => {
+export const ButtonNoConfirm:FC<ButtonNoConfirmProps> = ({onClick, text}) => {
     return (
         <Button
             onClick={onClick}
-            text='Нет'
+            text={`${text? text : 'Нет'}`}
             className='order-item__confirmno'
         />
     );

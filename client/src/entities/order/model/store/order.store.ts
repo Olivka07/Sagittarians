@@ -16,6 +16,39 @@ export const fetchGetOrdersFx = createEffect('Fetch orders by Client', {
     }
 })
 
+export const fetchUpdateIsGiven = createEffect('Fetch update is given', {
+    handler: async(id_order: number) => {
+        try {  
+            const candidate = await ordersApi.giveOrderApi(id_order)
+            return candidate
+        } catch(e) {
+            throw e
+        }
+    }
+})
+
+// export const fetchCancelOrder = createEffect('Fetch update reason', {
+//     handler: async(id_order: number, reason: string) => {
+//         try {  
+//             const candidate = await ordersApi.cancelOrderApi(id_order, reason)
+//             return candidate
+//         } catch(e) {
+//             throw e
+//         }
+//     }
+// })
+
+// export const fetchGetOrdersForSellersFx = createEffect('Fetch orders for Seller', {
+//     handler: async () => {
+//         try {
+//             const candidate = await ordersApi.getOrdersApi()
+//             return candidate
+//         } catch(e) {
+//             throw e
+//         }
+//     }
+// })
+
 export const fetchDeleteOrderFx = createEffect('Fetch delete order by id', {
     handler: async ({id_order, active}: ParamsForDeleteOrder) => {
         try {
@@ -58,4 +91,10 @@ export const $orders = createStore<IOrder[] | null>(null)
         const candidate = state!.filter((el) => el.id_order!==payload)
         if (candidate.length>0) return candidate
         return null
+    })
+    .on(fetchUpdateIsGiven.doneData, (state, payload) => {
+        return state!.map((el) => {
+            if (el.id_order === payload.id_order) return payload
+            return el
+        })
     })
