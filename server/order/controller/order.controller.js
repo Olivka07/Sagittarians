@@ -2,7 +2,8 @@ const orderService = require('../service/order.service.js')
 class OrderController {
     async getOrders(req, res, next) {
         try {
-            const {refreshToken} = req.cookies
+            // const {refreshToken} = req.cookies
+            const refreshToken = req.params.refresh_token
             const orders = await orderService.getOrders(refreshToken)
             res.status(200).json(orders)
         } catch(e) {
@@ -12,7 +13,8 @@ class OrderController {
 
     async getOrdersForSellersAndAdmin(req, res, next) {
         try {
-            const {refreshToken} = req.cookies
+            // const {refreshToken} = req.cookies
+            const refreshToken = req.params.refresh_token
             const orders = await orderService.getOrdersForSellersAndAdmin(refreshToken)
             res.status(200).json(orders)
         } catch(e) {

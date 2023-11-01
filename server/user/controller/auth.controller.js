@@ -30,7 +30,8 @@ class AuthController {
     }
     async logout(req, res, next) {
         try {
-            const {refreshToken} = req.cookies
+            // const {refreshToken} = req.cookies
+            const refreshToken = req.params.refresh_token
             const token = await authService.logout(refreshToken)
             res.clearCookie('refreshToken')
             return res.status(200).json(token)
@@ -49,7 +50,8 @@ class AuthController {
     // }
     async refresh(req, res, next) {
         try {
-            const {refreshToken} = req.cookies
+            // const {refreshToken} = req.cookies
+            const refreshToken = req.params.refresh_token
             const userData = await authService.refresh(refreshToken)
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true, secure: true})
             res.status(200).json(userData)

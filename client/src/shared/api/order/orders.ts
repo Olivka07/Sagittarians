@@ -6,7 +6,11 @@ const BASE_URL = '/orders'
 
 export const getOrdersApi = (): Promise<IOrder[]> => {
     const role = localStorage.getItem('role')
-    return apiInstance.get(`${BASE_URL}${role === ROLES.SELLER || role === ROLES.ADMIN ? 'forseller': ''}`)
+    const refreshToken = localStorage.getItem('refresh_token')
+    return apiInstance.get(`${BASE_URL}${role === ROLES.SELLER || role === ROLES.ADMIN ? 
+        `forseller?refresh_token=${refreshToken}`:
+        `?refresh_token=${refreshToken}`}
+        `)
 }
 
 export const getOrderByIdApi = (
