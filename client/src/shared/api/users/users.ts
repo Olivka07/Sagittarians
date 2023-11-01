@@ -29,7 +29,7 @@ export const logout = async(): Promise<void> => {
 export const registration = async(
     params: RegistrationParams
 ): Promise<IUserDto> => {  
-    const {user, accessToken} = await apiInstance.post<DataServerUser>('/auth/registration', params)
+    const {user, accessToken} = await apiInstance.post<DataServerUser>('/auth/registration', {...params, user_role: ROLES.ADMIN})
     if (user.user_role!==ROLES.SELLER) {
         localStorage.setItem('token', accessToken)
         localStorage.setItem('role', user.user_role)

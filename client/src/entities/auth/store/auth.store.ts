@@ -98,6 +98,21 @@ export const $user = createStore<IUserDto>({} as IUserDto)
         return payload
     })
 
+export const $pending = createStore<boolean>(false)
+    .on(fetchLoginFx, () => true)
+    .on(fetchLoginFx.doneData, () => false)
+    .on(fetchLoginFx.failData, () => false)
+    .on(fetchLogoutFx, () => true)
+    .on(fetchLogoutFx.doneData, () => false)
+    .on(fetchLogoutFx.failData, () => false)
+    .on(fetchRegistrationFx, () => true)
+    .on(fetchRegistrationFx.doneData, () => false)
+    .on(fetchRegistrationFx.failData, () => false)
+
+    
+    
+
+
     // .on(fetchLoginFx.failData, () => {
     //     return {} as IUserDto
     // })

@@ -10,6 +10,10 @@ import { ROLES } from 'shared/api/users/models';
 import './header.css'
 import { Button } from 'shared/ui/button';
 import { Link } from 'react-router-dom';
+import { useModal } from 'shared/lib/hooks/modal.hook';
+import Message from 'shared/ui/message/Message';
+import { $pending } from 'entities/auth/store/auth.store';
+import { Spinner } from 'shared/ui/spinner';
 
 const {Header} = Layout
 interface IHeaderButtonProps {
@@ -23,8 +27,8 @@ interface IHeaderButtonProps {
 export const HeaderPage: FC<PropsWithChildren> = () => {
     const {$modal, modalChange} = modalStore
     const [mobileMenu, setMobileMenu] = useState(false)
+    const loading = useStore($pending)
     const {$user, $auth, fetchLogoutFx} = authStore
-    const modal = useStore($modal)
     const auth = useStore($auth)
     const headerLable = useMemo(() => new Map<ROLES | false, Array<IHeaderButtonProps>> ([
         [ROLES.CLIENT, [
@@ -58,6 +62,7 @@ export const HeaderPage: FC<PropsWithChildren> = () => {
 
     return (
         <>
+            {loading && <Spinner/>}
             <Header
                 style={{
                     zIndex: 2,
