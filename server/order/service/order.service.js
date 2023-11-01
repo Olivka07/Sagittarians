@@ -91,7 +91,7 @@ class OrderService {
 
     async getOrderForSellerById(id_order) {
         const order = await db.query(`
-            SELECT title_product, price, weight, name_type
+            SELECT title_product, price, weight, name_type, id_product
             FROM "Cart"
             WHERE id_order = ${id_order}
         `)
@@ -125,11 +125,32 @@ class OrderService {
     }
 
     async setReasonOrderForSellersAndAdmin(id_order, reason) {
+        const reasonStr = reason.reduce((str, el) => {
+            if (typeof el === 'string') {
+                return str+= `"${el}", `
+            } else {
+                return str+= `"${el.title_product}", `
+            }
+        }, `${!reason.length>1? 'Закончился продукт ': 'Закончились: '}`)
         await db.query(`
-            UPDATE "Order" SET reason = '${reason}'
+            UPDATE "Order" SET reason = '${reasonStr.slice(0, reasonStr.length-2)}'
             where id_order = ${id_order}
         `)
+        const paramsObject = reason.filter((el) => {
+            if (typeof el !== 'string')
+                return el
+        })
         await this.deleteOrder(id_order, 'cancel', 'without_delete_order')
+        for (let i = 0; i < paramsObject.length; i++) {
+            const id_product = paramsObject[i].id_product
+            if (id_product !== null) {
+                await db.query(`
+                    UPDATE "Product"
+                    SET count_product = 0
+                    WHERE id_product = ${id_product}
+                `)
+            }
+        } 
         return await this.getOrderForSellerById(id_order)
     }
 }

@@ -3,6 +3,8 @@ import { modalStore } from 'entities/auth-modal/store';
 import React, {FC,useEffect, useCallback} from 'react';
 import {useStore} from 'effector-react'
 import type {FormInstance} from 'antd'
+import './auth-modal.css'
+
 
 
 const {Item} = Form

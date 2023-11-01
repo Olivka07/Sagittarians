@@ -1,4 +1,6 @@
 .order-item__btn-delete {
+    display: inline-block;
+    height: auto;
     padding: 0px 15px;
     font-size: 16px;
     font-weight: 600;
@@ -12,3 +14,38 @@
     color: rgb(164, 164, 236) !important;
     background-color: rgb(22, 22, 111);
 }
+
+@media (min-width: 300px) {
+    .order-item__btn-delete {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    
+}
+
+@media (min-width: 500px) {
+    
+}
+
+
+
+@media (min-width: 896px) {
+    .order-item__btn-delete {
+        margin-top: 0px;
+        width: auto;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .order-item__btn-delete {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .order-item__btn-delete {
+        font-size: 23px;
+    }
+}
+

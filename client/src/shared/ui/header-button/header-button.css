@@ -18,3 +18,42 @@
         transform: scale(1.1);
     }
 }
+
+@media (min-width: 300px) {
+    .header__button {
+        font-size: 15px;
+        display: block;
+        padding: 5px 15px;
+        color:rgb(0, 0, 0);
+
+    }
+}
+
+@media (min-width: 550px) {
+    .header__button {
+        font-size: 90%;
+        padding: 5px 6px;
+        display: inline-block;
+        color:rgb(156, 156, 156);
+    }
+}
+
+
+@media (min-width: 896px) {
+    .header__button {
+        font-size: 120%;
+        padding: 5px 6px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__button {
+        font-size: 180%;
+    }
+}
+
+@media (min-width: 1896px) {
+    .header__button {
+        font-size: 200%;
+    }
+}

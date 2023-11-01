@@ -8,6 +8,7 @@ import { SearchString } from "features/product/ui"
 import { AuthModal } from "widgets/auth-modal/ui"
 import { useGate } from "effector-react"
 import { fetchProductListFx, productsGate } from "entities/product/model/store"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 export const CatalogPage:FC = () => {
@@ -21,6 +22,7 @@ export const CatalogPage:FC = () => {
                 <SearchString/>
                 <Catalog/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

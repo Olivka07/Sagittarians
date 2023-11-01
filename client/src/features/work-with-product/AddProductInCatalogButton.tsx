@@ -50,7 +50,7 @@ export const AddProductInCatalogButton:FC<AddProductInCatalogButtonProps> = ({fo
                 path_image_product: values.path_image_product && values.path_image_product.fileList.length>0 ? filePath : ''
             }
             await fetchAddNewProductFx(params)
-            toggle(`Добавление нового товара ${params.title_product} в каталог проошло успешно`)
+            toggle(`Добавление нового товара ${params.title_product} в каталог прошло успешно`)
             close()
         } catch (e) {
             console.log(e)
@@ -78,6 +78,7 @@ export const AddProductInCatalogButton:FC<AddProductInCatalogButtonProps> = ({fo
     }, [values])
     return (
         <Button
+            className='add-or-update-product-in-catalog-btn'
             disabled={disabled}
             style={{
                 backgroundColor: 'black',

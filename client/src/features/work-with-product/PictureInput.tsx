@@ -19,6 +19,11 @@ export const PictureInput:FC<PictureInputProps> = ({form}) => {
     const [fileList, setFileList] = useState<UploadFile[]>([])
     const values = useWatch([], form)
 
+    useEffect(() => {
+        if (values && !values.path_image_product) {
+            setFileList([])
+        }
+    },[values])
 
     const changeFileList = ({file, fileList}:UploadChangeParam) => {
         setFileList(fileList)
@@ -33,6 +38,7 @@ export const PictureInput:FC<PictureInputProps> = ({form}) => {
             <Item<FieldType>
                 label="Фото товара"
                 name="path_image_product"
+                initialValue={null}
             >
                 <Upload
                     listType="picture"
@@ -42,7 +48,8 @@ export const PictureInput:FC<PictureInputProps> = ({form}) => {
                     onChange={changeFileList}
                     beforeUpload={beforeUpload}
                 >
-                    <Button 
+                    <Button
+                        className='picture-btn-modal-window__load' 
                         onClick={() => {}} 
                         text='Загрузить'
                     />
@@ -57,8 +64,6 @@ export const PictureInput:FC<PictureInputProps> = ({form}) => {
                 }}>  
                     <img 
                         style={{
-                            maxWidth: '60px',
-                            maxHeight: '60px',
                             display: 'block',
                             marginTop: '10px'
                         }} 
@@ -72,11 +77,9 @@ export const PictureInput:FC<PictureInputProps> = ({form}) => {
                         }}
                         style={{
                             marginLeft: '10px',
-                            fontSize: '10px',
                             backgroundColor: 'rgb(177, 29, 3)',
                             color: 'white',
                             fontWeight: 'bolder',
-                            padding: '0px 10px'
                         }}
                     />
                 </div>

@@ -29,6 +29,7 @@ export const RegistrySellerModal:FC<RegistrySellerModalProps> = () => {
                 buttons={[
                     <RegistryButton key={'reg-button'} form={form} role={ROLES.SELLER} toggle={toggle}/>,
                     <Button
+                        className='close-modal-registry-sellers'
                         key={'Закрыть'}
                         onClick={changeModalRegistry}
                         text='Закрыть'
@@ -41,6 +42,7 @@ export const RegistrySellerModal:FC<RegistrySellerModalProps> = () => {
             >
                 <Form
                     form={form}
+                    className='form-auth-modal'
                 >
                     <SurnameInput/>
                     <NameInput/> 

@@ -5,6 +5,7 @@ import { LayoutPage } from "shared/ui/layout"
 import { HeaderPage } from "widgets/header/ui"
 import { AuthModal } from "widgets/auth-modal/ui"
 import { OrdersByClients } from "widgets/orders/ui/orders-clients/OrdersByClients"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 export const OrdersPage:FC = () => {
@@ -16,6 +17,7 @@ export const OrdersPage:FC = () => {
             <Content>
                 <OrdersByClients/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

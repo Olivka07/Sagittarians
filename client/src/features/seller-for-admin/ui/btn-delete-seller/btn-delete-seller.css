@@ -1,4 +1,6 @@
 .seller-item__delete {
+    display: inline-block;
+    height: auto;
     padding: 0 10px;
     border: 0;
     font-size: 20px;
@@ -10,4 +12,38 @@
     color: black !important;
     border: 0 !important;
     box-shadow: 0px 0px 7px 0px black;
+}
+
+@media (min-width: 300px) {
+    .seller-item__delete {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 550px) {
+    .seller-item__delete {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .seller-item__delete {
+        padding: 2px 10px;
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .seller-item__delete {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .seller-item__delete {
+        font-size: 26px;
+    }
 }

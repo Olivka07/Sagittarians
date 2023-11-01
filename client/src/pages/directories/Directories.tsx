@@ -9,6 +9,7 @@ import { AuthModal } from "widgets/auth-modal/ui"
 import { useGate } from "effector-react"
 import { DirectoryTypeProduct } from "widgets/directories"
 import { DirectoryTypeOfWeight } from "widgets/directories/ui/DirectoryTypeOfWeight"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 export const Directories:FC = () => {
@@ -18,11 +19,12 @@ export const Directories:FC = () => {
             <AuthModal/>
             <HeaderPage/>
             <Content>
-                <Row justify={'space-around'}>
+                <Row className="directoires__row" justify={'space-around'}>
                     <DirectoryTypeProduct/>
                     <DirectoryTypeOfWeight/>
                 </Row>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

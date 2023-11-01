@@ -48,9 +48,6 @@ export const OrderItem:FC<OrderItemProps> = ({orderItem, toggle, role}) => {
         }
     }
 
-    useEffect(() => {
-        console.log(orderItem)
-    }, [])
     return (
         <li className='order-item__li'>
             <ModalWindow

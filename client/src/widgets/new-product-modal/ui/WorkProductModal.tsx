@@ -87,6 +87,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
                     buttons={[
                         ...buttons,
                         <Button
+                            className='add-or-update-product-in-catalog-btn'
                             key={'Закрыть'}
                             onClick={() => {
                                 changeModal()
@@ -101,7 +102,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
                     ]}
                 >
                     <Form 
-                        className='work-with-product__form'
+                        className='work-with-product__form form-auth-modal'
                         form={form}
                         name={`validateOnly${Date.now()}`}
                     >

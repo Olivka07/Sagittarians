@@ -3,7 +3,7 @@
     margin-top: 2%;
     font-family: Noto Sans, sans-serif;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 150%;
     padding: 5px 10px;
     background-color: rgba(205, 205, 205, 0.512);
     border: 0;
@@ -26,4 +26,38 @@
 .content__search:focus {
     background-color: rgb(255, 255, 255);
     box-shadow: none;
+}
+
+
+
+@media (min-width: 300px) {
+    .content__search {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 550px) {
+    .content__search {
+        font-size: 90%;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .content__search {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content__search {
+        font-size: 180%;
+    }
+}
+
+@media (min-width: 1896px) {
+
+    .content__search {
+        font-size: 200%;
+    }
 }

@@ -1,0 +1,130 @@
+
+.header__container-with-header-buttons-mobile {
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: #dcdcdc;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px) ;
+    transform: rotate(-45deg) translate(-7px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.header__container-with-header-buttons {
+    display: block;
+}
+
+.header__mobile-menu {
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px black;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translate(-15%, 0);
+}
+
+.header__logo {
+    height: 100%;
+    max-width: 100px;
+    display: inline-flex;
+}
+.header__logo img {
+    height: 100%;
+}
+
+.header__logo a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__logo a span{
+    display: inline-block;
+    height: max-content;
+    color: rgb(242, 255, 0);
+    font-weight: 900;
+    font-size: 24px;
+}
+
+
+
+@media (min-width: 300px) {
+    .header__container-with-header-buttons-mobile {
+        display: block;
+    }
+    .header__container-with-header-buttons {
+        display: none;
+    }
+    .ant-layout-header {
+        padding: 0 10px;
+    }
+
+    .header__logo a span{
+        font-size: 15px;
+    }
+    .header__logo img {
+        height: 100%;
+    }
+}
+
+@media (min-width: 550px) {
+    .header__container-with-header-buttons-mobile {
+        display: none;
+    }
+    .header__container-with-header-buttons {
+        display: block;
+    }
+    .header__logo a span{
+        font-size: 15px;
+    }
+    .header__logo img {
+        height: 100%;
+    }
+}
+
+@media (min-width: 896px) {
+    .ant-layout-header {
+        padding: 0 50px;
+    }
+    .header__logo img {
+        height: 100%;
+    }
+    .header__logo a span{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header__logo a span{
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .header__logo a span{
+        font-size: 30px;
+    }
+}
+
+
+

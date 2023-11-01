@@ -1,7 +1,7 @@
 import type { PickerLocale } from "antd/es/date-picker/generatePicker"
 import CalendarLocale from 'rc-picker/lib/locale/ru_RU';
 
-export const API_URL = 'http://localhost:5000/api'
+export const API_URL = 'https://sagittarius-store.server.vercel.app/api'
 
 export const locale: PickerLocale = {
     lang: {

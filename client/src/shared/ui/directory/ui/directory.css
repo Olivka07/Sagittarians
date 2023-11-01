@@ -5,6 +5,8 @@
 }
 
 .button_add {
+    display: inline-block;
+    height: auto;
     font-weight: 600;
     color: rgb(29, 245, 5);
     background-color: inherit;
@@ -22,6 +24,8 @@
 }
 
 .button_save {
+    display: inline-block;
+    height: auto;
     font-weight: 600;
     color: rgb(47, 220, 255);
     background-color: inherit;
@@ -46,6 +50,8 @@
 }
 
 .btn__delete {
+    display: inline-block;
+    height: auto;
     background-color: rgb(234, 136, 136);
     color: rgb(121, 18, 18);
 }
@@ -74,9 +80,176 @@
 
 .ant-popconfirm-buttons button {
     margin-right: 20px;
+    display: inline-block;
+    height: auto !important;
     width: 30%;
 }
 
 .ant-popconfirm-buttons button:nth-child(1) {
     background-color: rgba(188, 199, 209, 0.904);
+}
+
+
+@media (min-width: 300px) {
+    .directoires__row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .dict__header {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .dict__warning {
+        font-size: 18px;
+    }
+
+
+    .directoires__row .ant-col {
+        min-width: 80%;
+    }
+
+    .button_add, .button_save {
+        padding: 2px 5px;
+        font-size: 10px;
+        margin: 10px 0px;
+    }
+    .button_save {
+        margin: 10px 0px 10px 10px;
+    }
+    .directoires__row th, .directoires__row td div, 
+    .directoires__row .btn__delete, .form-cell-directory input, .ant-popconfirm-title,
+    .ant-popconfirm-buttons button {
+        font-size: 10px;
+    }
+
+    .btn__delete {
+        padding: 1px 2px;
+    }
+    
+}
+
+@media (min-width: 550px) {
+    .dict__header {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .dict__warning {
+        font-size: 18px;
+    }
+
+    .button_add, .button_save {
+        padding: 4px 10px;
+        font-size: 16px;
+        margin: 20px 0px;
+    }
+    .button_save {
+        margin: 20px 0px 20px 20px;
+    }
+    .directoires__row th, .directoires__row td div, 
+    .directoires__row .btn__delete, .form-cell-directory input, .ant-popconfirm-title,
+    .ant-popconfirm-buttons button {
+        font-size: 16px;
+    }
+
+    .btn__delete {
+        padding: 4px 10px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .directoires__row {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .dict__header {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .dict__warning {
+        font-size: 20px;
+    }
+
+
+
+    .directoires__row .ant-col {
+        min-width:auto;
+    }
+    .button_add, .button_save {
+        padding: 2px 5px;
+        font-size: 12px;
+        margin: 15px 0px;
+    }
+    .button_save {
+        margin: 15px 0px 15px 15px;
+    }
+    .directoires__row th, .directoires__row td div, 
+    .directoires__row .btn__delete, .form-cell-directory input, .ant-popconfirm-title,
+    .ant-popconfirm-buttons button {
+        font-size: 12px;
+    }
+
+    .btn__delete {
+        padding: 2px 5px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .dict__header {
+        margin-top: 30px;
+        font-size: 28px;
+    }
+    .dict__warning {
+        font-size: 28px;
+    }
+
+
+    .button_add, .button_save {
+        padding: 4px 10px;
+        font-size: 16px;
+        margin: 20px 0px;
+    }
+    .button_save {
+        margin: 20px 0px 20px 20px;
+    }
+    .directoires__row th, .directoires__row td div, 
+    .directoires__row .btn__delete,.form-cell-directory input, .ant-popconfirm-title,
+    .ant-popconfirm-buttons button  {
+        font-size: 16px;
+    }
+
+    .btn__delete {
+        padding: 4px 10px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .dict__header {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+    .dict__warning {
+        font-size: 36px;
+    }
+
+
+    .button_add, .button_save {
+        padding: 4px 10px;
+        font-size: 24px;
+        margin: 20px 0px;
+    }
+    .button_save {
+        margin: 20px 0px 20px 20px;
+    }
+    .directoires__row th, .directoires__row td div, 
+    .directoires__row .btn__delete, .form-cell-directory input, .ant-popconfirm-title,
+    .ant-popconfirm-buttons button {
+        font-size: 24px !important;
+    }
+
+    .btn__delete {
+        padding: 4px 10px;
+    }
 }

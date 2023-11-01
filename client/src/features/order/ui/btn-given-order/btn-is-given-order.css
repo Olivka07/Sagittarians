@@ -1,6 +1,8 @@
 
 
 .order-item-for-seller__btnisgiven {
+    display: inline-block;
+    height: auto;
     padding: 0px 15px;
     font-size: 16px;
     font-weight: 600;
@@ -13,4 +15,39 @@
 .order-item-for-seller__btnisgiven:hover {
     color: rgb(129, 241, 138) !important;
     background-color: rgb(26, 91, 16);
+}
+
+
+@media (min-width: 300px) {
+    .order-item-for-seller__btnisgiven {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 500px) {
+    
+}
+
+
+
+@media (min-width: 896px) {
+    .order-item-for-seller__btnisgiven {
+        margin-top: 0px;
+        width: auto;
+        font-size: 14px;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .order-item-for-seller__btnisgiven{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .order-item-for-seller__btnisgiven {
+        font-size: 23px;
+    }
 }

@@ -2,6 +2,8 @@ import {Input, Form} from 'antd'
 import { useStore } from 'effector-react';
 import { modalStore } from 'entities/auth-modal/store';
 import React from 'react';
+import './auth-modal.css'
+
 
 const {Item} = Form
 

@@ -12,3 +12,38 @@
     align-items:flex-start;
     margin-top: 30px;
 }
+
+.buy-product__cointainer-active button {
+    display: block !important;
+    height: auto;
+}
+
+
+@media (min-width: 300px) {
+    .buy-product__cointainer-active input, .buy-product__price,  .buy-product__cointainer-active button{
+        font-size: 90% !important;
+    }
+}
+
+
+
+@media (min-width: 896px) {
+    .buy-product__cointainer-active input, .buy-product__price,  .buy-product__cointainer-active button{
+        font-size: 120% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .buy-product__cointainer-active input, .buy-product__price,  .buy-product__cointainer-active button{
+        font-size: 170% !important;
+    }
+}
+
+@media (min-width: 1896px) {
+
+    .buy-product__cointainer-active input, .buy-product__price,  .buy-product__cointainer-active button{
+        font-size: 200% !important;
+    }
+
+}
+

@@ -55,7 +55,7 @@ export const WorkWithSellers:FC<WorkWithSellersProps> = ({sellers}) => {
                 open={!!modalConfirm}
                 title='Подтвердите ваше действие'
             >
-                {modalConfirm && <div>{`Вы точно хотите удалить аккаунт ${modalConfirm!.surname + ' ' + modalConfirm!.name}?`}</div>}
+                {modalConfirm && <div className='seller-for-admin__textinopenmodal'>{`Вы точно хотите удалить аккаунт ${modalConfirm!.surname + ' ' + modalConfirm!.name}?`}</div>}
             </ModalWindow>
             <Button
                 onClick={changeRegistryModal}

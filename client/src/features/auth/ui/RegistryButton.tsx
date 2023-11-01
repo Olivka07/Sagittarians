@@ -8,6 +8,8 @@ import {Form} from 'antd'
 import { ROLES } from 'shared/api/users/models';
 import { fetchSellers } from 'entities/users/model/store';
 import { usersStore } from 'entities/users';
+import './auth-modal.css'
+
 
 interface RegistryButtonProps {
     form: FormInstance
@@ -55,6 +57,7 @@ export const RegistryButton:FC<RegistryButtonProps> = ({form, toggle, role}) => 
 
     return (
         <Button 
+            className='button-auth-modal__registry'
             key={'btn-reg'}
             disabled={disabled}
             onClick={registration}
@@ -64,7 +67,6 @@ export const RegistryButton:FC<RegistryButtonProps> = ({form, toggle, role}) => 
                 color: 'white',
                 gridColumn: '1/3',
                 justifySelf: 'start',
-                padding: '0px 20px'
             }}
         />
     );

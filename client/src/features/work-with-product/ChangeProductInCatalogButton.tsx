@@ -102,8 +102,8 @@ export const ChangeProductInCatalogButton:FC<ChangeProductInCatalogButton> = ({f
                 color: 'white',
                 gridColumn: '1/3',
                 justifySelf: 'start',
-                padding: '0px 20px'
             }}
+            className='add-or-update-product-in-catalog-btn'
             onClick={clickChangeProduct}
             text='Изменить'
         />

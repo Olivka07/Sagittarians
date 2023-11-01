@@ -22,3 +22,51 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+@media (min-width: 300px) {
+    .seller-item__container .ant-card-head .ant-card-head-title {
+        font-size: 12px !important;
+    }
+    
+    .seller-item__meta {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 550px) {
+    .seller-item__delete {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .seller-item__container .ant-card-head .ant-card-head-title {
+        font-size: 20px !important;
+    }
+    
+    .seller-item__meta {
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .seller-item__container .ant-card-head .ant-card-head-title {
+        font-size: 26px !important;
+    }
+    
+    .seller-item__meta {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .seller-item__container .ant-card-head .ant-card-head-title {
+        font-size: 32px !important;
+    }
+    
+    .seller-item__meta {
+        font-size: 28px;
+    }
+}

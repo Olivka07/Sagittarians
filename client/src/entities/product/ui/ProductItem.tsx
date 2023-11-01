@@ -16,13 +16,13 @@ export const ProductItem:FC<ProductItemProps> = ({product, children}) => {
             style={{
                 margin: '5%',
             }}
+            className='product-item__card-image'
         >
             <Space 
                 size={50}
                 align='start'
             >
                 <Image
-                    width={350}
                     style={{
                         backgroundColor: 'white',
                         boxShadow: '#00d7ff9e 3px 3px 4px 1px',

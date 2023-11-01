@@ -22,6 +22,7 @@ interface WorkWithTimetableProps {
 }
 
 export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
+    const [minWidth, setMinWidth] = useState(false)
 
     const {modal, toggle} = useModal()
     // const [ceilsFromDb, setCeilsFromDb] = useState<ICeil[] | null>(null)
@@ -297,6 +298,14 @@ export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
         }
     }
 
+    useEffect(() => {
+        if (window.innerWidth < 896 && !minWidth) {
+            setMinWidth(true)
+        } else if (minWidth && window.innerWidth >= 896){
+            setMinWidth(false)
+        }
+    }, [])
+
     const clearAll = () => {
         clearCeils(date_timetable)
     }
@@ -306,7 +315,7 @@ export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
             {modal && <Message>{modal}</Message>}
             <Row className='timetable__featuresadmin'>
                 <Col span={8}>
-                    <Form form={formPickTimetable}>
+                    <Form form={formPickTimetable} className='form-timetable__form'>
                         <DatePickerTimetable form={formPickTimetable}/>
                     </Form>
                 </Col>
@@ -323,7 +332,7 @@ export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
             {loading && <Spinner/>}
             <div className='timetable__container'>
                 <div className='timetable__grid'>
-                    {weekDays.map((weekday) => {
+                    {!minWidth && weekDays.map((weekday) => {
                         return (
                             <div key={weekday} className='timetable__weekday'>{weekday}</div>
                         )
@@ -336,7 +345,7 @@ export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
                                 onDragOver = {(e) => onDragOverHandler(e, ceil)}
                                 onDrop={(e)=>onDropHandler(e,{} as IUserDto, ceil)}
                             >
-                                {ceil.date && <div className='timetable__dateinceil'>{ceil.date}</div>}
+                                {ceil.date && <div className='timetable__dateinceil'>{`${ceil.date} ${minWidth ? `(${weekDays[index%7]})`: ''}`}</div>}
                                 {ceil.sellers.length>0 && ceil.sellers.map((seller) => {
                                     return (
                                         <SellerInTimetable
@@ -351,6 +360,8 @@ export const WorkWithTimetable:FC<WorkWithTimetableProps> = ({sellers}) => {
                         )
                     })}
                 </div>
+
+                <div></div>
 
                 <div 
                     className='basket-sellers'

@@ -4,6 +4,8 @@ import dayjs from 'dayjs';
 import { useStore } from 'effector-react';
 import { modalStore } from 'entities/auth-modal/store';
 import React from 'react';
+import './auth-modal.css'
+
 
 const {Item} = Form
 
@@ -24,17 +26,19 @@ export const BirthdateInput = () => {
                 required: true, 
                 message: `Пожалуйста введите дату рождения сотрудника`, 
                 validator: (_,value) => {
-                    const dateStr = value['$d'].toLocaleDateString()
-                    const dateStrTokens = dateStr.split('.')
-                    const myDate = new Date(dateStrTokens[2], dateStrTokens[1]-1, dateStrTokens[0])
+                    if (value) {
+                        const dateStr = value['$d'].toLocaleDateString()
+                        const dateStrTokens = dateStr.split('.')
+                        const myDate = new Date(dateStrTokens[2], dateStrTokens[1]-1, dateStrTokens[0])
 
-                    const upDate = new Date()
-                    const downDate = new Date(1940, 0, 1)
+                        const upDate = new Date()
+                        const downDate = new Date(1940, 0, 1)
 
-                    if (myDate < upDate && myDate > downDate) {
-                        return Promise.resolve()
-                    } else {
-                        return Promise.reject()
+                        if (myDate < upDate && myDate > downDate) {
+                            return Promise.resolve()
+                        } else {
+                            return Promise.reject()
+                        }
                     }
                 }
             }]}

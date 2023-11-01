@@ -22,7 +22,6 @@ export const MeasuringSelect = () => {
             >
             <Select>
                 {typesOfWeight && typesOfWeight.map((typeOfWeight) => {
-                    console.log(typeOfWeight)
                     return (
                         <Select.Option key={Date.now()+typeOfWeight.id_type} value={typeOfWeight.name_type}>{typeOfWeight.name_type.toLowerCase()}</Select.Option>
                     )

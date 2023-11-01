@@ -85,7 +85,6 @@ export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi
             dataIndex: 'operation_delete',
             width:'30%',
             render: (_, record) => {
-                console.log(record)
                 return dataSource.length >= 1 ? (
                     <Popconfirm 
                       key={record.id+'delete'} 
@@ -191,6 +190,7 @@ export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi
     return {
       ...col,
       onCell: (record: DataType) => ({
+        key: 'sdf' + record.id+record.name,
         record,
         editable: col.editable,
         dataIndex: col.dataIndex,
@@ -206,8 +206,8 @@ export const Directory: FC<DirectoryProps> = ({data, title, updateInDirectoryApi
       {modal && <Message>{modal}</Message>}
         <h2 className='dict__header'>{`Справочник "${title}"`}</h2>
         {warning && <div className='dict__warning'>&#128165;{warning}</div>}
-        <Button onClick={handleAdd} text='Добавить' className='button_add'/>
-        <Button onClick={handleSaveAll} text='Сохранить всё' className='button_save'/>
+        <Button key={'btn-add'} onClick={handleAdd} text='Добавить' className='button_add'/>
+        <Button key={'btn-save'} onClick={handleSaveAll} text='Сохранить всё' className='button_save'/>
         {dataSource.length>0 ?
           <Table
               key={data?dataSource.length:'falsekey'}

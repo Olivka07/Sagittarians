@@ -1,5 +1,5 @@
 import {Layout} from 'antd'
-import React, {FC, PropsWithChildren, MouseEventHandler, useMemo} from 'react';
+import React, {FC, PropsWithChildren, MouseEventHandler, useMemo, useState} from 'react';
 import {useStore} from 'effector-react'
 import {styles} from 'shared/lib/styles'
 import { HeaderButton } from 'shared/ui/header-button';
@@ -7,12 +7,14 @@ import {PATH_PAGE} from 'shared/lib/react-router'
 import {authStore} from 'entities/auth/store'
 import { modalStore } from 'entities/auth-modal/store';
 import { ROLES } from 'shared/api/users/models';
+import './header.css'
+import { Button } from 'shared/ui/button';
+import { Link } from 'react-router-dom';
 
 const {Header} = Layout
-
 interface IHeaderButtonProps {
     lable: string
-    onClick: MouseEventHandler
+    onClick: () => void
     modalContent?: FC
     to: string
 } 
@@ -20,6 +22,7 @@ interface IHeaderButtonProps {
 
 export const HeaderPage: FC<PropsWithChildren> = () => {
     const {$modal, modalChange} = modalStore
+    const [mobileMenu, setMobileMenu] = useState(false)
     const {$user, $auth, fetchLogoutFx} = authStore
     const modal = useStore($modal)
     const auth = useStore($auth)
@@ -48,6 +51,10 @@ export const HeaderPage: FC<PropsWithChildren> = () => {
         ]],
     ]), [])
 
+    const changeOpenningMenu = () => {
+        setMobileMenu(prev => !prev)
+    }
+
 
     return (
         <>
@@ -65,9 +72,12 @@ export const HeaderPage: FC<PropsWithChildren> = () => {
                 }}
             >
                 <div className="header__logo">
-                    Логотип
+                    <Link to={PATH_PAGE.root}>
+                        <span>Стрельцы</span>
+                        <img src='/assets/icon.jpg'/>
+                    </Link>
                 </div>
-                <div>
+                <div className='header__container-with-header-buttons'>
                     {headerLable.get(auth)?.map(({lable, ...props}, index) => {
                         return (
                             <HeaderButton key={index} {...props}>
@@ -76,6 +86,24 @@ export const HeaderPage: FC<PropsWithChildren> = () => {
                         )
                     })}
                 </div>
+                <div onClick={changeOpenningMenu} className={`header__container-with-header-buttons-mobile ${mobileMenu? 'change' : ''}`}>
+                    <div className="bar1"></div>
+                    <div className="bar2"></div>
+                    <div className="bar3"></div>
+                </div>
+                <div className='header__mobile-menu'>
+                    {mobileMenu && headerLable.get(auth)?.map(({lable, onClick, ...props}, index) => {
+                            return (
+                                <HeaderButton onClick={() => {
+                                    onClick()
+                                    changeOpenningMenu()
+                                }} key={index} {...props}>
+                                    {lable.toUpperCase()}
+                                </HeaderButton>
+                            )
+                    })}
+                </div>
+                
             </Header>
         </>
     );

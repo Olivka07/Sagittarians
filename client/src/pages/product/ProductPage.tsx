@@ -7,6 +7,7 @@ import {HeaderPage} from 'widgets/header/ui'
 import { BuyProduct } from 'widgets/buy-product';
 import { useStore } from 'effector-react';
 import { $typesProducts } from 'entities/product/model/store';
+import { FooterPage } from 'widgets/footer/ui/Footer';
 
 
 const {Content} = Layout
@@ -21,6 +22,7 @@ export const ProductPage: React.FC = () => {
             <Content>
                 <BuyProduct product_id={Number(product_id)}/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

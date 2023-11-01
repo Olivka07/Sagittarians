@@ -24,6 +24,9 @@ export const giveOrderApi = (id_order: number): Promise<IOrder> => {
     return apiInstance.put(`${BASE_URL}`,{id_order: id_order})
 }
 
-export const cancelOrderApi = (id_order: number, reason: string): Promise<IOneOrder> => {
+export const cancelOrderApi = (
+    id_order: number, 
+    reason: Array<string | {id_product: number, title_product: string}>
+): Promise<IOneOrder> => {
     return apiInstance.put(`${BASE_URL}forseller`,{id_order: id_order, reason: reason})
 }

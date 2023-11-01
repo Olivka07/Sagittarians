@@ -9,9 +9,18 @@
     color: white;
 }
 
+.order-meta__container div{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
 .order-meta__container div:first-child{
     font-size: 32px;
     margin-bottom: 20px;
+}
+
+.order-meta__container div:last-child{
+    margin-bottom: 0px;
 }
 
 .order-meta__status_given {
@@ -28,4 +37,57 @@
 
 .order-meta__span {
     color: pink;
+}
+
+@media (min-width: 300px) {
+    .order-meta__container div{
+        font-size: 16px;
+    }
+    
+    .order-meta__container div:first-child{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 500px) {
+    
+    .order-meta__container div{
+        font-size: 18px;
+    }
+    
+    .order-meta__container div:first-child{
+        font-size: 22px;
+    }
+}
+
+
+
+@media (min-width: 896px) {
+    .order-meta__container div{
+        font-size: 24px;
+    }
+    
+    .order-meta__container div:first-child{
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .order-meta__container div{
+        font-size: 30px;
+    }
+    
+    .order-meta__container div:first-child{
+        font-size: 34px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .order-meta__container div{
+        font-size: 34px;
+    }
+    
+    .order-meta__container div:first-child{
+        font-size: 40px;
+    }
 }

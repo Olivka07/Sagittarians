@@ -1,5 +1,5 @@
 const db = require('../../db')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const uuid = require('uuid')
 const userService = require('../service/users.service')
 const mailService = require('../../mail/service/mail.service')

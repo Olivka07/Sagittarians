@@ -14,10 +14,15 @@
     font-size: 20px;
     font-weight: 600;
     color: black;
+    margin-bottom: 5px;
 }
 
 .order-item__meta div:first-child{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.order-item__meta div:last-child{
+    margin-bottom: 0px;
 }
 
 .order-item__meta div:last-child{
@@ -49,4 +54,44 @@
 .order-item__meta_canceled {
     color: rgb(128, 23, 0) !important;
     text-decoration: line-through;
+}
+
+@media (min-width: 300px) {
+    .order-item__metacontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 500px) {
+    
+    .order-item__meta div {
+        font-size: 16px;
+    }
+}
+
+
+
+@media (min-width: 896px) {
+    .order-item__btns {
+        align-self: flex-end;
+    }
+    .order-item__metacontainer {
+        flex-direction: row;
+    }
+    .order-item__meta div {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .order-item__meta div {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .order-item__meta div {
+        font-size: 36px;
+    }
 }

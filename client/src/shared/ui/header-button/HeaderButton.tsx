@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 import './header-button.css'
 
 interface HeaderButtonProps extends PropsWithChildren {
-    onClick?: MouseEventHandler,
+    onClick?: () => void,
+    changeOpenningMenu?: () => void
     to: string
 }
 

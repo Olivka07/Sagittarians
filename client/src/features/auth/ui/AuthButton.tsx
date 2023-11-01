@@ -7,6 +7,7 @@ import {LoginParams, RegistrationParams} from 'shared/api/users/models'
 import {Form} from 'antd'
 import type {FormInstance} from 'antd'
 import { AxiosError } from 'axios';
+import './auth-modal.css'
 
 interface AuthButtonProps {
     form: FormInstance
@@ -32,6 +33,7 @@ export const AuthButton: FC<AuthButtonProps> = ({form, toggle}) => {
     }, [values])
     return (
         <Button 
+            className='button-auth-modal__auth'
             disabled={disabled}
             key={'Авторизация'}
             onClick={async() => {
@@ -56,7 +58,6 @@ export const AuthButton: FC<AuthButtonProps> = ({form, toggle}) => {
                 color: 'white',
                 gridColumn: '1/3',
                 justifySelf: 'start',
-                padding: '0px 20px'
             }}
             htmlType='submit'
         />

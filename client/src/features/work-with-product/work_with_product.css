@@ -18,3 +18,130 @@
     text-align: left;
 }
 
+.createnewproductbtn {
+    display: inline-block;
+    position: absolute;
+    margin-left: -10px;
+    height: auto;
+    padding: 5px;
+}
+
+.changeproductbtn {
+    display: inline-block;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index:1;
+    background-color: rgba(70, 203, 22, 0.397);
+    left: 0;
+    transform: translate(50%, 10px);
+}
+
+.deleteproductfromcatalog {
+    display: inline-block;
+    height: auto;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 10px);
+    background-color: rgba(160, 22, 22, 0.377);
+}
+
+.delete-from-catalog-text-in-modal {
+    font-size: 17px;
+    margin: 30px 0px;
+    font-weight: bolder;
+}
+
+.yes-delete-confirm-modal-product {
+    display: inline-block;
+    height: auto;
+    grid-column: 2/3;
+    justify-self: center;
+    background-color: rgba(199, 61, 61, 0.433);
+    font-weight: 700;
+    color: rgb(98, 16, 16);
+}
+
+.no-delete-noconfirm-modal-product {
+    display: inline-block;
+    height: auto;
+    grid-column: 3/4;
+    justify-self: center;
+}
+
+.picture-btn-modal-window__load {
+    display: inline-block;
+    height: auto;
+}
+.add-or-update-product-in-catalog-btn {
+    display: inline-block;
+    height: auto;
+}
+
+@media (min-width: 300px) {
+    .delete-from-catalog-text-in-modal,
+    .no-delete-noconfirm-modal-product, .yes-delete-confirm-modal-product, .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn  {
+        font-size: 10px;
+    }
+
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog,
+    .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn {
+        padding: 2px 2px !important;
+    }
+
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 550px) {
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog {
+        font-size: 18px;
+    }
+    .delete-from-catalog-text-in-modal,
+    .no-delete-noconfirm-modal-product, .yes-delete-confirm-modal-product, .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn  {
+        font-size: 14px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog, .delete-from-catalog-text-in-modal,
+    .no-delete-noconfirm-modal-product, .yes-delete-confirm-modal-product, .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn  {
+        font-size: 18px;
+    }
+
+
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog {
+        padding: 5px !important;
+    } 
+    
+    .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn {
+        padding: 0px 20px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog, .delete-from-catalog-text-in-modal,
+    .no-delete-noconfirm-modal-product, .yes-delete-confirm-modal-product, .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn  {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .createnewproductbtn, .changeproductbtn, .deleteproductfromcatalog, .delete-from-catalog-text-in-modal,
+    .no-delete-noconfirm-modal-product, .yes-delete-confirm-modal-product, .picture-btn-modal-window__load,
+    .add-or-update-product-in-catalog-btn  {
+        font-size: 24px;
+    }
+}
+
+

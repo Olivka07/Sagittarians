@@ -59,7 +59,14 @@ export const OrderListForSeller:FC<OrderListForSellerProps> = ({id_order}) => {
 
     const clickYesConfirm = async() => {
         try {
-            const res = await ordersApi.cancelOrderApi(id_order, form.getFieldValue('reason'))
+            const res = await ordersApi.cancelOrderApi(id_order, form.getFieldValue('reason').map((el:number | string) => {
+                if (typeof el === 'number') {
+                    return {
+                        id_product: el,
+                        title_product: order!.find(o => o.id_product === el)!.title_product
+                    }
+                }
+            }))
             setOrderMeta(res.orderMeta)
             setOrder(res.order)
             changeConfirm()
@@ -75,7 +82,7 @@ export const OrderListForSeller:FC<OrderListForSellerProps> = ({id_order}) => {
     }, [])
 
     return (
-        <>
+        <div className='orders-client__wrap'>
             <ModalWindow
                 buttons={[
                     <ButtonYesConfirm disabled={disabled} text='Отменить' key={'yesconfrim'} onClick={clickYesConfirm}/>,
@@ -85,9 +92,9 @@ export const OrderListForSeller:FC<OrderListForSellerProps> = ({id_order}) => {
                 open={confirm}
                 title='Подтвердите действие'
             >
-                <div className='orders-client__confirmtext'>
-                    <Form form={form}>
-                        <ReasonInput/>
+                <div>
+                    <Form form={form} className='orders-client__confirmtext'>
+                        <ReasonInput products={order}/>
                     </Form>
                 </div>
             </ModalWindow>
@@ -102,11 +109,11 @@ export const OrderListForSeller:FC<OrderListForSellerProps> = ({id_order}) => {
                             )
                         })}
                     </ul>
-                    {!orderMeta.reason && <ButtonCancel style={{width:'20%'}} onClick={clickCancel}/>}
+                    {!orderMeta.reason && <ButtonCancel onClick={clickCancel}/>}
                 </div> :
                 <Spinner/>
             }
-        </>
+        </div>
     );
 };
 

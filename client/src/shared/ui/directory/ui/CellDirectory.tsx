@@ -75,6 +75,7 @@ export const CellDirectory: FC<EditableCellProps> =({
     if (editable) {
       childNode = editing ? (
         <Form.Item
+          className='form-cell-directory'
           key={record.name+record.key}
           style={{ margin: 0 }}
           name={dataIndex}

@@ -1,4 +1,5 @@
 import {Input, Form} from 'antd'
+import './auth-modal.css'
 
 
 const {Item} = Form

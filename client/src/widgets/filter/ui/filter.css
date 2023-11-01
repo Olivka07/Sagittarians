@@ -1,15 +1,9 @@
 .filters__container {
     position: sticky;
 }
-.filters__container label {
-    font-family: monospace;
-    font-weight: 900;
-    font-size: 15px;
-    color: rgb(245, 183, 237);
-}
 
 .filters__container > label {
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
 .ant-checkbox-group {
     display: flex;
@@ -20,3 +14,134 @@
     display: block !important;
 }
 
+.filters__container .ant-checkbox-group label {
+    margin-bottom: 30px;
+}
+
+.filters__container label {
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 15px;
+    color: rgb(245, 183, 237);
+}
+
+.filters__container .ant-checkbox-wrapper {
+    display: flex;
+}
+
+.filters__container .ant-checkbox {
+    display: block;
+    align-self: center;
+}
+
+.filters__container .ant-checkbox+span {
+    display: block;
+    align-self: center;
+}
+
+@media (min-width: 300px) {
+    .filters__container .ant-checkbox-group label {
+        margin-bottom: 10px;
+    }
+    .filters__container .ant-checkbox-inner::after {
+        width: 10px;
+        text-align: center;
+        height: 10px;
+    }
+    .filters__container .ant-checkbox-inner {
+        width: 18px;
+        height: 18px;
+        text-align: center;
+    }
+    .filters__container .ant-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+    .filters__container label {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 550px) {
+    .filters__container .ant-checkbox-group label {
+        margin-bottom: 20px;
+    }
+    .filters__container .ant-checkbox-inner::after {
+        width: 11px;
+        text-align: center;
+        height: 11px;
+    }
+    .filters__container .ant-checkbox-inner {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+    }
+    .filters__container .ant-checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    .filters__container label {
+        font-size: 90%;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .filters__container .ant-checkbox-inner::after {
+        width: 12px;
+        text-align: center;
+        height: 12px;
+    }
+    .filters__container .ant-checkbox-inner {
+        width: 24px;
+        height: 24px;
+        text-align: center;
+    }
+    .filters__container .ant-checkbox {
+        width: 24px;
+        height: 24px;
+    }
+    .filters__container label {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .filters__container .ant-checkbox-inner::after {
+        width: 14px;
+        text-align: center;
+        height: 14px;
+    }
+    .filters__container .ant-checkbox-inner {
+        width: 28px;
+        height: 28px;
+        text-align: center;
+    }
+    .filters__container .ant-checkbox {
+        width: 28px;
+        height: 28px;
+    }
+    .filters__container label {
+        font-size: 180%;
+    }
+}
+
+@media (min-width: 1896px) {
+    .filters__container .ant-checkbox-inner::after {
+        width: 15px;
+        text-align: center;
+        height: 15px;
+    }
+    .filters__container .ant-checkbox-inner {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+    .filters__container .ant-checkbox {
+        width: 30px;
+        height: 30px;
+    }
+    .filters__container label {
+        font-size: 200%;
+    }
+}

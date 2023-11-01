@@ -45,6 +45,7 @@ export const AuthModal = () => {
                 buttons={[
                     ...buttons,
                     <Button 
+                        className='button-auth-modal__btnmeta'
                         key={'Вход/Регистрация'}
                         onClick={() => {
                             setRegistry(prev => !prev)
@@ -53,6 +54,7 @@ export const AuthModal = () => {
                         text={registry ? 'Вход': 'Регистрация'}
                     />,
                     <Button
+                        className='button-auth-modal__btnmeta'
                         key={'Закрыть'}
                         onClick={() => {
                             modalChange()
@@ -66,6 +68,7 @@ export const AuthModal = () => {
                 <Form 
                     form={form}
                     name='validateOnly'
+                    className='form-auth-modal'
                 >
                     {
                         registry &&

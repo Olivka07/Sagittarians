@@ -5,6 +5,7 @@ import { LayoutPage } from "shared/ui/layout"
 import { HeaderPage } from "widgets/header/ui"
 import { AuthModal } from "widgets/auth-modal/ui"
 import Basket from "widgets/basket/ui/basket/Basket"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 export const BasketPage:FC = () => {
@@ -16,6 +17,7 @@ export const BasketPage:FC = () => {
             <Content>
                 <Basket/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

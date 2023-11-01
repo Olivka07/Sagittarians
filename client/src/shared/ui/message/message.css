@@ -14,6 +14,40 @@
     color: rgb(205, 200, 33);
 }
 
+
+
+@media (min-width: 300px) {
+    .message__container {
+        font-size: 70%;
+    }
+}
+
+@media (min-width: 550px) {
+    .message__container {
+        font-size: 90%;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .message__container {
+        font-size: 120%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .message__container {
+        font-size: 140%;
+    }
+}
+
+@media (min-width: 1896px) {
+
+    .message__container {
+        font-size: 160%;
+    }
+}
+
 /* @keyframes  {
     
 } */

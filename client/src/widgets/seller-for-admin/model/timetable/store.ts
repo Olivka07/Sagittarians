@@ -109,7 +109,6 @@ export const $ceilsFromDb = createStore<Array<ICeil> | null>(null)
     //     return changeCeilsHandler(state!, payload)
     // })
     .on(fetchTimetableFx.doneData, (state, payload) => {
-        console.log(state)
         return changeCeilsHandler(state!, payload)
     })
     .on(fetchSaveTimetableFx.doneData, (state, payload) => {
@@ -118,7 +117,6 @@ export const $ceilsFromDb = createStore<Array<ICeil> | null>(null)
 
 export const $ceils = createStore<Array<ICeil> | null>(null)
     .on(fetchTimetableFx.doneData, (state, payload) => {
-        console.log(state)
         return changeCeilsHandler(state!, payload)
     })
     .on(fetchSaveTimetableFx.doneData, (state, payload) => {

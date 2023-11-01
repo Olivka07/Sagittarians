@@ -7,6 +7,7 @@ import { useGate, useStore } from 'effector-react';
 import { WorkWithTimetable } from 'widgets/seller-for-admin/ui/WorkWithTimetable';
 import { $loading, $sellers, GateSellers } from 'entities/users/model/store';
 import { Spinner } from 'shared/ui/spinner';
+import { FooterPage } from 'widgets/footer/ui/Footer';
 
 
 const {Content} = Layout
@@ -23,6 +24,7 @@ export const SellerTimetablePage: React.FC = () => {
                 {loading && <Spinner/>}
                 {sellers && <WorkWithTimetable sellers={sellers}/>}
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

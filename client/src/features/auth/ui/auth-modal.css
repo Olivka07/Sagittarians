@@ -1,0 +1,282 @@
+.ant-modal {
+    width: 60% !important;
+}
+
+.form-auth-modal .ant-form-item-label {
+    position: relative;
+    top: 10px;
+}
+
+.button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta{
+    min-width: 50% !important;
+    padding: 5px 10px;
+    font-size: 200% !important;
+    display: block !important;
+    height: auto !important;
+}
+
+.close-modal-registry-sellers {
+    display: inline-block;
+    height: auto;
+    grid-column: 4/5;
+    justify-self: end;
+}
+
+#imagehead button {
+    display: inline-block;
+    height: max-content;
+}
+
+
+@media (min-width: 300px) {
+    .form-auth-modal input,.form-auth-modal .ant-form-item-label label,
+    .form-auth-modal .ant-form-item-label label::before, 
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta,.close-modal-registry-sellers,
+    .ant-select-selection-item, .ant-select-item-option-content,
+    .ant-upload-list-item-name,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 70% !important;
+    }
+
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers{
+        font-size: 55% !important;
+        padding: 1px 1px;
+    }
+
+
+
+    .form-auth-modal .ant-form-item-label {
+        top: 0;
+    }
+
+
+
+    .work-with-product__form  .ant-upload-list-item {
+        height: 40px !important;
+    }
+
+    .work-with-product__form .ant-upload-list-item-thumbnail {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .ant-upload-list-item-actions button svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+
+    #imagehead button {
+        font-size: 10px !important;
+        padding: 2px 3px !important;
+    }
+    #imagehead img {
+        max-width: 60px !important;
+        min-height: 60px !important;
+    }
+}
+
+@media (min-width: 550px) {
+    .form-auth-modal input,.form-auth-modal .ant-form-item-label label,
+    .form-auth-modal .ant-form-item-label label::before, 
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers,
+    .ant-select-selection-item, .ant-select-item-option-content,
+    .ant-upload-list-item-name,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 90% !important;
+    }
+
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers{
+        padding: 2px 5px;
+    }
+
+
+
+    .form-auth-modal .ant-form-item-label {
+        top: 0;
+    }
+
+
+
+    .work-with-product__form  .ant-upload-list-item {
+        height: 40px !important;
+    }
+
+    .work-with-product__form .ant-upload-list-item-thumbnail {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .ant-upload-list-item-actions button svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+
+    #imagehead button {
+        font-size: 10px !important;
+        padding: 2px 5px !important;
+    }
+    #imagehead img {
+        max-width: 90px !important;
+        min-height: 90px !important;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .form-auth-modal input,.form-auth-modal .ant-form-item-label label,
+    .form-auth-modal .ant-form-item-label label::before, 
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers,
+    .ant-select-selection-item, .ant-select-item-option-content,
+    .ant-upload-list-item-name,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 120% !important;
+    }
+
+    /* 01.11 */
+    .form-auth-modal .ant-form-item-label {
+        top: 0;
+    }
+
+
+
+
+    .work-with-product__form  .ant-upload-list-item {
+        height: 60px !important;
+    }
+
+    .work-with-product__form .ant-upload-list-item-thumbnail {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .ant-upload-list-item-actions button svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+
+    #imagehead button {
+        font-size: 13px !important;
+        padding: 2px 5px !important;
+    }
+    #imagehead img {
+        max-width: 90px !important;
+        min-height: 90px !important;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .form-auth-modal input,.form-auth-modal .ant-form-item-label label,
+    .form-auth-modal .ant-form-item-label label::before, 
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers,
+    .ant-select-selection-item, .ant-select-item-option-content,
+    .ant-upload-list-item-name,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 180% !important;
+    }
+
+
+
+    /* 01.11 */
+    .form-auth-modal .ant-form-item-label {
+        /* top: 0; */
+        top: 6px;
+    }
+
+    .work-with-product__form .ant-form-item-label{
+        top: 3px;
+    }
+
+    .work-with-product__form .ant-form-item:not(:last-child) .ant-form-item-label label {
+        top: 5px;
+    }
+
+    .work-with-product__form .ant-form-item [title='Фото товара'] {
+        top: 0px !important;
+    }
+    /* .work-with-product__form div:last-child .ant-form-item-label label {
+        top: 0px;
+    } */
+    .work-with-product__form .ant-form-item:last-child .ant-form-item-label {
+        top: 0px ;
+    }
+    .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers{
+        padding: 5px 10px;
+    }
+    .ant-select-selector {
+        height: 45px !important;
+    }
+
+    .work-with-product__form  .ant-upload-list-item {
+        height: 90px !important;
+    }
+
+    .work-with-product__form .ant-upload-list-item-thumbnail {
+        width: 76px !important;
+        height: 76px !important;
+    }
+
+    .ant-upload-list-item-actions button svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    #imagehead button {
+        font-size: 18px !important;
+        padding: 2px 10px !important;
+    }
+    #imagehead img {
+        min-width: 120px !important;
+        min-height: 120px !important;
+    }
+}
+
+@media (min-width: 1896px) {
+    .form-auth-modal input,.form-auth-modal .ant-form-item-label label,
+    .form-auth-modal .ant-form-item-label label::before, .button-auth-modal__auth, 
+    .button-auth-modal__registry, .button-auth-modal__btnmeta, .close-modal-registry-sellers,
+    .ant-select-selection-item, .ant-select-item-option-content,
+    .ant-upload-list-item-name,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 200% !important;
+    }
+
+    .ant-select-selector {
+        height: 50px !important;
+    }
+
+    .work-with-product__form  .ant-upload-list-item {
+        height: 100px !important;
+    }
+
+    .work-with-product__form .ant-upload-list-item-thumbnail {
+        width: 96px !important;
+        height: 96px !important;
+    }
+
+    .ant-upload-list-item-actions button svg {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    #imagehead button {
+        font-size: 20px !important;
+        padding: 2px 10px !important;
+    }
+    #imagehead img {
+        min-width: 140px !important;
+        min-height: 140px !important;
+    }
+
+    
+
+    /* .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta{
+        min-width: 50% !important;
+        padding: 5px 10px;
+        font-size: 200% !important;
+        display: block !important;
+        height: auto !important;
+    } */
+}

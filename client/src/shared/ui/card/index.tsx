@@ -14,15 +14,16 @@ const {Meta} = CardAntd
 
 export const Card:FC<CardProps> = ({product, children}) => {
     return (
-        <li style={{display: 'flex', justifyContent: 'center', position: 'relative'}}>
+        <li style={{display: 'block', textAlign:'center', width: '100%', position:'relative'}}>
             {children}
             <Link 
                 to={`/catalog/${product.id_product}`} 
-                style={{display: 'inline-block'}}
+                style={{display: 'inline-block', width: '100%', height: '100%'}}
             >
                 <CardAntd
                     hoverable
-                    style={{ width: '300px', textAlign: 'center', justifyContent: 'center'}}
+                    className='card__containermdeia'
+                    // style={{ width: '300px', textAlign: 'center', justifyContent: 'center'}}
                     cover={
                         <img 
                             style={{

@@ -8,6 +8,8 @@
 }
 
 .seller-for-admin__openmodal {
+    display: inline-block;
+    height: auto;
     background-color: black;
     color: white;
     font-size: 18px;
@@ -27,14 +29,18 @@
     background-color: rgb(35, 34, 34);
     color: white;
     grid-column: 1/2;
-    padding: 0 50px !important;
-    width: 100%;
+    padding: 0 30px !important;
+    width: max-content;
+    display: inline-block;
+    height: auto;
     justify-self: center;
 }
 
 .seller-for-admin__deleteno {
+    width: max-content;
+    display: inline-block;
+    height: auto;
     grid-column: 4/5;
-    width: 100%;
     justify-self: center;
 }
 
@@ -51,7 +57,7 @@
 
 .timetable__container {
     display: grid;
-    grid-template-areas: 'timetable basket';
+    /* grid-template-areas: 'timetable basket'; */
     grid-template-columns: 7fr 3fr;
 }
 
@@ -59,7 +65,8 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(7, 1fr);
-    grid-area: timetable;
+    /* grid-area: timetable; */
+    gap: 10px;
 }
 
 .timetable__row {
@@ -67,16 +74,16 @@
 }
 
 .timetable__ceil {
-    width: 160px;
+    overflow-y: auto;
     padding: 10px;
-    height: 160px;
     box-shadow: 0px 0px 7px 0px rgb(226 220 217);
     background-color: rgb(107, 9, 102);
-    margin: 5px;
+    /* margin: 5px; */
     /* border: 2px solid rgb(0, 191, 255); */
 }
 
 .basket-sellers {
+    /* grid-area: basket; */
     box-shadow: 0px 0px 10px 1px rgb(229, 255, 0);
     border-radius: 10px;
     padding: 20px;
@@ -170,4 +177,309 @@
 
 .timetable__featuresadmin .ant-form-item {
     margin: 0 !important;
+}
+
+.form-timetable__form .ant-col {
+    display: flex;
+}
+
+.form-timetable__form .ant-form-item-label label {
+    align-self: center;
+}
+
+
+@media (min-width: 300px) {
+    .seller-for-admin__deleteyes {
+        padding: 0 10px !important;
+    }
+    
+    .form-timetable__form #date_timetable {
+        width: max-content;
+    }
+    .timetable__featuresadmin label {
+        align-self: flex-end !important;
+        text-align: center;
+    }
+
+
+    .timetable__featuresadmin {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 15px 0px;
+    }
+    .timetable__featuresadmin div {
+        max-width: 100%;
+    }
+    .timetable__featuresadmin .ant-form-item-control {
+        /* margin-top: 10px; */
+        margin-top: 0;
+    }
+
+    .timetable__featuresadmin .ant-form-item-control div{
+        /* margin-top: 10px; */
+        margin-top: 0;
+    }
+
+
+    .timetable__featuresadmin div{
+        margin-top: 10px;
+    }
+    .basket-sellers {
+        /* grid-area: basket; */
+        box-shadow: 0px 0px 10px 1px rgb(229, 255, 0);
+        border-radius: 4px;
+        padding: 5px;
+        position: fixed;
+        left: 100vw;
+        top: 50%;
+        transform: translate(-115%, -50%);
+    }
+    .timetable__grid {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-area: timetable; */
+        gap: 10px;
+    }
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 65% !important;
+    }
+    .timetable__seller {
+        font-size: 65%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 40%;
+    }
+
+    .timetable__warningsave {
+        text-align: center;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday,.timetable__warningsave, .ant-picker-month-btn, 
+    .ant-picker-body table th, .ant-picker-today-btn, .seller-for-admin__openmodal,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input {
+        font-size: 10px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 8px !important;
+        height: 8px !important;
+    }
+}
+
+@media (min-width: 550px) {
+    .seller-for-admin__deleteyes {
+        padding: 0 20px !important;
+    }
+    .timetable__grid {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-area: timetable; */
+        gap: 10px;
+    }
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 70% !important;
+    }
+    .timetable__seller {
+        font-size: 70%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 50%;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday,.timetable__warningsave, .ant-picker-month-btn,
+    .ant-picker-body table th, .ant-picker-today-btn, .seller-for-admin__openmodal,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input {
+        font-size: 18px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 8px !important;
+        height: 8px !important;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .seller-for-admin__deleteyes {
+        padding: 0 30px !important;
+    }
+    .timetable__featuresadmin {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0px;
+    }
+    .timetable__featuresadmin div {
+        max-width: auto;
+    }
+
+
+    .timetable__featuresadmin label {
+        align-self: center !important;
+        text-align: left;
+    }
+    .timetable__featuresadmin {
+        flex-direction: row;
+    }
+    .timetable__featuresadmin div{
+        margin-top: 0px;
+    }
+    .basket-sellers {
+        /* grid-area: basket; */
+        box-shadow: 0px 0px 10px 1px rgb(229, 255, 0);
+        border-radius: 10px;
+        padding: 20px;
+        position: fixed;
+        left: 100vw;
+        top: 50%;
+        transform: translate(-115%, -50%);
+    }
+    .timetable__grid {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(7, 1fr);
+        /* grid-area: timetable; */
+        gap: 10px;
+    }
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 60% !important;
+    }
+    .timetable__seller {
+        font-size: 75%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 70%;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .ant-picker-month-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday, .timetable__warningsave,
+    .ant-picker-body table th, .ant-picker-today-btn, .seller-for-admin__openmodal,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input {
+        font-size: 12px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 10px !important;
+        height: 10px !important;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 100% !important;
+    }
+    .timetable__seller {
+        font-size: 70%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 100%;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday,.timetable__warningsave,.ant-picker-month-btn,
+    .ant-picker-body table th, .ant-picker-today-btn, .seller-for-admin__openmodal,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input {
+        font-size: 14px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 12px !important;
+        height: 12px !important;
+    }
+}
+
+@media (min-width: 1561px) {
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 130%;
+    }
+    .timetable__seller {
+        font-size: 60%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 140%;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday,.timetable__warningsave, .ant-picker-month-btn,
+    .ant-picker-body table th, .ant-picker-today-btn,.seller-for-admin__openmodal,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input {
+        font-size: 18px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}
+
+
+@media (min-width: 2036px) {
+    .timetable__ceil {
+        width: 100%;
+        aspect-ratio: 1/1;
+        font-size: 140%;
+    }
+    .timetable__seller {
+        font-size: 80%;
+    }
+    .basket-sellers__ceil, .timetable__weekday {
+        font-size: 180%;
+    }
+
+    .form-timetable__form .ant-picker-input input, .ant-picker-cell-inner,
+    .ant-picker-year-btn, .form-timetable__form .ant-form-item-label label, 
+    .timetable__weekday, .timetable__warningsave,.ant-picker-month-btn,
+    .ant-picker-body table th, .ant-picker-today-btn,
+    .seller-for-admin__deleteno, .seller-for-admin__deleteyes, .seller-for-admin__textinopenmodal,
+    .form-timetable__form .ant-picker-input, .seller-for-admin__openmodal {
+        font-size: 22px !important;
+    }
+
+    .ant-picker-prev-icon::after, .ant-picker-prev-icon::before,
+    .ant-picker-next-icon::after, .ant-picker-next-icon::before,
+    .ant-picker-super-prev-icon::after, .ant-picker-super-prev-icon::before,
+    .ant-picker-super-next-icon::after, .ant-picker-super-next-icon::before {
+        width: 18px !important;
+        height: 18px !important;
+    }
 }

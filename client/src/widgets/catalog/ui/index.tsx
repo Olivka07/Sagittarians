@@ -9,15 +9,18 @@ import { $auth } from "entities/auth/store/auth.store"
 import { WorkProductModal } from "widgets/new-product-modal/ui/WorkProductModal"
 import { Spinner } from "shared/ui/spinner"
 import { ChangeProductInCatalogButton, DeleteProductFromCatalog } from "features/work-with-product"
+import { useModal } from "shared/lib/hooks/modal.hook"
+import Message from "shared/ui/message/Message"
 
 export const Catalog = () => {
-    
+    const {modal, toggle} = useModal()
     const productList = useStore($productList)
     const auth = useStore($auth)
     const pending = useStore($loadPending)
 
     return (
         <>
+            {modal && <Message>{modal}</Message>}
             <Row
                 style={{
                     marginTop: '5%'
@@ -38,7 +41,7 @@ export const Catalog = () => {
                                 {productList.map((product) => {
                                     return (
                                         <Card key={product.id_product} product={product}>
-                                            <DeleteProductFromCatalog id_product={product.id_product} title_product={product.title_product}/>
+                                            <DeleteProductFromCatalog toggle={toggle} id_product={product.id_product} title_product={product.title_product}/>
                                             <WorkProductModal product={product} work="change"/>
                                         </Card>
                                     )

@@ -15,3 +15,170 @@
     flex-direction: column;
     width: 40%;
 }
+.orders-client__confirmtext .ant-form-item-control {
+    height: min-content;
+    /* padding: 4px 0px; */
+}
+
+.orders-client__confirmtext .ant-select-selection-item, .orders-client__confirmtext .ant-select-selection-item-content {
+    display: inline-block;
+    height: auto;
+}
+.orders-client__confirmtext .ant-form-item-label label {
+    align-self: flex-start;
+}
+
+.orders-client__confirmtext .ant-select-selector, .orders-client__confirmtext .ant-select-selection-overflow-item,
+.orders-client__confirmtext .ant-select-selection-overflow, .orders-client__confirmtext .ant-select-selection-item,
+.orders-client__confirmtext .ant-select-selection-item-content{
+    height: 40px;
+}
+.orders-client__confirmtext .ant-select-selection-item {
+    display: flex;
+    align-items: center;
+}
+.orders-client__confirmtext .ant-select-selection-item-content {
+    display: inline-block;
+    align-self: center;
+    height: max-content;
+}
+
+.orders-client__confirmtext .ant-form-item-label label {
+    position: relative;
+    top: 6px;
+}
+
+@media (min-width: 300px) {
+    .orders-client__confirmtext input,.orders-client__confirmtext .ant-form-item-label label,
+    .orders-client__confirmtext .ant-form-item-label label::before, 
+    .orders-client__confirmtext .ant-select-selection-item-content,
+    .orders-client__confirmtext .ant-select-selection-placeholder,
+    .ant-select-item-option-content,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 80% !important;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-remove svg {
+        width: 8px;
+        height: 8px;
+    } 
+
+    .orders-client__confirmtext .ant-select-selector, .orders-client__confirmtext .ant-select-selection-overflow-item,
+    .orders-client__confirmtext .ant-select-selection-overflow,
+    .orders-client__confirmtext .ant-select-selection-item-content{
+        height: 28px;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-content, .orders-client__confirmtext .ant-select-selection-item {
+        height: 28px;
+        margin: 0;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-content {
+        padding: 1px;
+    }
+    
+    .orders-client__confirmtext .ant-form-item-label label {
+        top: 1px;
+    }
+}
+
+@media (min-width: 500px) {
+    
+}
+
+
+
+@media (min-width: 896px) {
+    .orders-client__confirmtext input,.orders-client__confirmtext .ant-form-item-label label,
+    .orders-client__confirmtext .ant-form-item-label label::before, 
+    .orders-client__confirmtext .ant-select-selection-item-content,
+    .orders-client__confirmtext .ant-select-selection-placeholder,
+    .ant-select-item-option-content,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 80% !important;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-remove svg {
+        width: 8px;
+        height: 8px;
+    } 
+
+    .orders-client__confirmtext .ant-select-selector, .orders-client__confirmtext .ant-select-selection-overflow-item,
+    .orders-client__confirmtext .ant-select-selection-overflow, .orders-client__confirmtext .ant-select-selection-item,
+    .orders-client__confirmtext .ant-select-selection-item-content{
+        height: 29px;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-content {
+        padding: 2px;
+    }
+    
+    .orders-client__confirmtext .ant-form-item-label label {
+        top: 1px;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .orders-client__confirmtext input,.orders-client__confirmtext .ant-form-item-label label,
+    .orders-client__confirmtext .ant-form-item-label label::before, 
+    .orders-client__confirmtext .ant-select-selection-item-content,
+    .orders-client__confirmtext .ant-select-selection-placeholder,
+    .ant-select-item-option-content,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 100% !important;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-remove svg {
+        width: 12px;
+        height: 12px;
+    } 
+
+    .orders-client__confirmtext .ant-select-selector, .orders-client__confirmtext .ant-select-selection-overflow-item,
+    .orders-client__confirmtext .ant-select-selection-overflow, .orders-client__confirmtext .ant-select-selection-item,
+    .orders-client__confirmtext .ant-select-selection-item-content{
+        height: 30px;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-content {
+        padding: 3px;
+    }
+    
+    .orders-client__confirmtext .ant-form-item-label label {
+        top: 4px;
+    }
+    
+}
+
+@media (min-width: 1896px) {
+    .orders-client__confirmtext input,.orders-client__confirmtext .ant-form-item-label label,
+    .orders-client__confirmtext .ant-form-item-label label::before, 
+    .orders-client__confirmtext .ant-select-selection-item-content,
+    .orders-client__confirmtext .ant-select-selection-placeholder,
+    .ant-select-item-option-content,
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 160% !important;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-remove svg {
+        width: 16px;
+        height: 16px;
+    } 
+
+    .orders-client__confirmtext .ant-select-selector, .orders-client__confirmtext .ant-select-selection-overflow-item,
+    .orders-client__confirmtext .ant-select-selection-overflow, .orders-client__confirmtext .ant-select-selection-item,
+    .orders-client__confirmtext .ant-select-selection-item-content{
+        height: 40px;
+    }
+
+    .orders-client__confirmtext .ant-select-selection-item-content {
+        padding: 5px;
+    }
+    
+    .orders-client__confirmtext .ant-form-item-label label {
+        top: 6px;
+    }
+    
+}
+

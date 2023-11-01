@@ -1,4 +1,8 @@
 .order-item__btn-cancel {
+    display: inline-block;
+    height: auto;
+    width: max-content;
+    align-self: center;
     padding: 0px 15px;
     font-size: 16px;
     font-weight: 600;
@@ -11,4 +15,38 @@
 .order-item__btn-cancel:hover {
     color: rgb(241, 129, 129) !important;
     background-color: rgb(91, 16, 16);
+}
+
+
+@media (min-width: 300px) {
+    .order-item__btn-cancel {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 500px) {
+    
+}
+
+
+
+@media (min-width: 896px) {
+    .order-item__btn-cancel {
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .order-item__btn-cancel {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .order-item__btn-cancel {
+        font-size: 23px;
+    }
 }

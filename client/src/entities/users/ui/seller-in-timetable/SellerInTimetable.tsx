@@ -9,6 +9,7 @@ import { Button } from 'shared/ui/button';
 import { $ceils, changeCeils, changeCurrentCeil, changeCurrentSeller } from 'widgets/seller-for-admin/model/timetable/store';
 import { useStore } from 'effector-react';
 import { ICeil, ISellerDto } from 'shared/api/timetable/models';
+import './seller-in-timetable.css'
 
 interface SellerInTimetableProps {
     seller: ISellerDto
@@ -63,7 +64,7 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
 
     const onDragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
         setTimeStr(null)
-        e.preventDefault()
+        // e.preventDefault()
     } 
 
     const onDragStartHandler = () => {
@@ -82,6 +83,17 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
         }
     }
 
+    const clickShowTime = () => {
+        if (!basket) {
+            const start: string | number  = seller.timeStart || 'Пусто'
+            const end: string | number = seller.timeEnd || 'Пусто'
+            setTimeStr(`${start} - ${end}`)
+            setTimeout(() => {
+                setTimeStr(null)
+            }, 2000)
+        }
+    }
+
     if (!basket)
         return (
             <div
@@ -90,13 +102,13 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
                 <ModalWindow
                     buttons={[
                         <ButtonSaveTimeForSeller form={form} key={'savetime'} onClick={saveTimeHandler}/>,
-                        <Button key={'canceltime'} onClick={() => setChangeModal(prev => !prev)} text={'Отменить'}/>
+                        <Button className='btn-for-settime' key={'canceltime'} onClick={() => setChangeModal(prev => !prev)} text={'Отменить'}/>
                     ]}
                     open={changeModal}
                     title='Установите время'
                     onCancel={() => setChangeModal(prev => !prev)}
                 >
-                    <Form form={form}>
+                    <Form form={form} className='timetable__form-set-time'>
                         <InputTimeIn time_in={seller.timeStart && seller.timeStart!=='Пусто'? seller.timeStart : ''}/>
                         <InputTimeOut time_out={seller.timeEnd && seller.timeEnd!=='Пусто'? seller.timeEnd : ''}/>
                     </Form>
@@ -109,6 +121,7 @@ export const SellerInTimetable:FC<SellerInTimetableProps> = ({
                 <div
                     onMouseOver={mouseOverHandler}
                     onMouseLeave={() => setTimeStr(null)}
+                    onClick={clickShowTime}
                     onDoubleClick={() => doubleClickOnSeller(seller)}
                     key={seller.id_user}
                     draggable={true}

@@ -25,6 +25,7 @@ const ButtonSaveTimeForSeller:FC<ButtonSaveTimeForSellerProps> = ({onClick, form
     }, [values])
     return (
         <Button
+            className='btn-for-save-timeset'
             disabled={disabled}
             onClick={onClick}
             text='Сохранить'

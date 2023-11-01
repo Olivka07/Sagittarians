@@ -1,4 +1,6 @@
 .seller-for-admin__btn {
+    display: inline-block;
+    height: auto;
     margin-right: 20px;
     background-color: rgb(159, 29, 85);
     color: rgb(177, 252, 1);
@@ -9,7 +11,7 @@
     border: 0;
 }
 
-.seller-for-admin__btn:hover {
+.seller-for-admin__btn:hover:enabled {
     background-color: rgb(107, 20, 58);
     color: rgb(112, 157, 8) !important;
     box-shadow: 5px 2px 7px 1px rgb(4, 81, 4);
@@ -34,3 +36,37 @@
         transform: scale(1.1);
     }
 } */
+
+@media (min-width: 300px) {
+    .seller-for-admin__btn {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 550px) {
+    .seller-for-admin__btn {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .seller-for-admin__btn {
+        padding: 2px 10px;
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .seller-for-admin__btn {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .seller-for-admin__btn {
+        font-size: 26px;
+    }
+}

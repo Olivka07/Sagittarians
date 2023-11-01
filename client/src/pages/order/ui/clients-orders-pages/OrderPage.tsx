@@ -12,6 +12,7 @@ import { DirectoryTypeOfWeight } from "widgets/directories/ui/DirectoryTypeOfWei
 import { OrdersByClients } from "widgets/orders/ui/orders-clients/OrdersByClients"
 import { useParams } from "react-router"
 import { OrderList } from "widgets/order/ui/order-list/OrderList"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 const OrderPage:FC = () => {
@@ -24,6 +25,7 @@ const OrderPage:FC = () => {
             <Content>
                 <OrderList id_order={Number(id_order)}/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }

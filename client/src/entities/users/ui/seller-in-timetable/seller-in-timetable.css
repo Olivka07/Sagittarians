@@ -1,0 +1,99 @@
+.btn-for-settime, .btn-for-save-timeset {
+    display: inline-block;
+    height: auto;
+}
+
+.btn-for-settime {
+    grid-column: 4/5;
+    justify-self: center;
+} 
+.btn-for-save-timeset {
+    grid-column: 1/2;
+    justify-self: center;
+}
+
+@media (min-width: 300px) {
+    .btn-for-settime, .btn-for-save-timeset {
+        padding: 2px 5px;
+    } 
+    .timetable__form-set-time input,.timetable__form-set-time .ant-form-item-label label,
+    .timetable__form-set-time .ant-form-item-label label::before, .btn-for-settime, 
+    .btn-for-save-timeset, 
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 90% !important;
+    }
+
+    .timetable__form-set-time .ant-form-item-label label{
+        position: relative;
+        top: 0px;
+    }
+}
+
+@media (min-width: 550px) {
+    .timetable__form-set-time input,.timetable__form-set-time .ant-form-item-label label,
+    .timetable__form-set-time .ant-form-item-label label::before, .btn-for-settime, 
+    .btn-for-save-timeset, 
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 65% !important;
+    }
+
+    .timetable__form-set-time .ant-form-item-label label{
+        position: relative;
+        top: 1px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .btn-for-settime, .btn-for-save-timeset {
+        padding: 4px 15px;
+    } 
+    .timetable__form-set-time input,.timetable__form-set-time .ant-form-item-label label,
+    .timetable__form-set-time .ant-form-item-label label::before, .btn-for-settime, 
+    .btn-for-save-timeset, 
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 100% !important;
+    }
+
+    .timetable__form-set-time .ant-form-item-label label{
+        position: relative;
+        top: 1px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .timetable__form-set-time input,.timetable__form-set-time .ant-form-item-label label,
+    .timetable__form-set-time .ant-form-item-label label::before, .btn-for-settime, 
+    .btn-for-save-timeset, 
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 120% !important;
+    }
+
+    .timetable__form-set-time .ant-form-item-label label{
+        position: relative;
+        top: 7px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .timetable__form-set-time input,.timetable__form-set-time .ant-form-item-label label,
+    .timetable__form-set-time .ant-form-item-label label::before, .btn-for-settime, 
+    .btn-for-save-timeset, 
+    .ant-modal-title, .ant-form-item-explain-error {
+        font-size: 200% !important;
+    }
+
+    .timetable__form-set-time .ant-form-item-label label{
+        position: relative;
+        top: 10px;
+    }
+
+    /* .button-auth-modal__auth, .button-auth-modal__registry, .button-auth-modal__btnmeta{
+        min-width: 50% !important;
+        padding: 5px 10px;
+        font-size: 200% !important;
+        display: block !important;
+        height: auto !important;
+    } */
+}

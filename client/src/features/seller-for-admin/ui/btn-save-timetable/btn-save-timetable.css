@@ -1,4 +1,6 @@
 .timetable__savetimetable {
+    display: inline-block;
+    height: auto;
     background-color: rgb(118, 245, 118);
     font-size: 18px;
     font-weight: 600;
@@ -14,4 +16,67 @@
     color: green !important;
     background-color: rgb(205, 243, 205);
     transform: scale(1.1);
+}
+
+
+@media (min-width: 300px) {
+    .timetable__featuresadmin #date_timetable {
+        text-align: center;
+    }
+    .timetable__featuresadmin div:last-child div {
+        display: flex;
+        flex-direction: column;
+    }
+    .timetable__featuresadmin div:last-child button{
+        width: min-content;
+    }
+    .timetable__featuresadmin div:last-child button:last-child{
+        margin: 0;
+        margin-top: 10px;
+    }
+    .timetable__savetimetable {
+        padding: 2px 4px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 550px) {
+    .timetable__featuresadmin #date_timetable {
+        text-align:left;
+    }
+    .timetable__featuresadmin div:last-child div {
+        display: flex;
+        flex-direction: row;
+    }
+    .timetable__featuresadmin div:last-child button{
+        width: auto;
+    }
+    .timetable__featuresadmin div:last-child button:last-child{
+        margin: 0;
+        margin-left: 10px;
+    }
+    .timetable__savetimetable {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 896px) {
+    .timetable__savetimetable {
+        padding: 2px 10px;
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .timetable__savetimetable {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1896px) {
+    .timetable__savetimetable {
+        font-size: 26px;
+    }
 }

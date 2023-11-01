@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.item-basket__container img {
+    width: 70% !important;
+}
+
 .item-basket__meta {
     display: flex;
     flex-direction: column;
@@ -36,6 +40,10 @@
 }
 
 .item-basket__deletebtn {
+    align-self: flex-end;
+    display: block;
+    width: auto;
+    height: auto;
     background-color: rgb(252, 252, 252);
     color: rgb(170, 91, 154);
     font-weight: 700;
@@ -57,4 +65,91 @@
     font-size: 14px;
     font-weight: 600;
     color: red;
+}
+
+@media (min-width: 300px) {
+    .item-basket__container {
+        width: 95%;
+    }
+    .item-basket__grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item-basket__grid div {
+        max-width: 90% !important;
+        margin-bottom: 20px;
+    }
+    .item-basket__meta div, .item-basket__deletebtn {
+        font-size: 20px;
+    }
+
+    .item-basket__deletebtn {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+    .item-basket__container {
+        width: 70%;
+    }
+    /* .item-basket__grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item-basket__grid div {
+        max-width: 90% !important;
+        margin-bottom: 20px;
+    }
+    .item-basket__meta div, .item-basket__deletebtn {
+        font-size: 20px;
+    }
+
+    .item-basket__deletebtn {
+        font-size: 15px;
+    } */
+}
+
+
+
+@media (min-width: 896px) {
+    .item-basket__grid {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .item-basket__grid div {
+        margin-bottom: 0px;
+    }
+    .item-basket__meta div, .item-basket__deletebtn {
+        font-size: 20px;
+    }
+
+    .item-basket__deletebtn {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+
+    .item-basket__meta div, .item-basket__deletebtn {
+        font-size: 24px;
+    }
+
+    .item-basket__deletebtn {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1896px) {
+
+    .item-basket__meta div, .item-basket__deletebtn {
+        font-size: 30px;
+    }
+
+    .item-basket__deletebtn {
+        font-size: 25px;
+    }
+
+
 }

@@ -1,5 +1,6 @@
-import {Input, Form} from 'antd'
-import React from 'react';
+import {Input, Form, Select} from 'antd'
+import React, { FC, useEffect, useMemo } from 'react';
+import { IOrderProduct } from 'shared/api/order';
 
 const {Item} = Form
 
@@ -7,7 +8,19 @@ type FieldType = {
     reason?: string;
 };
 
-export const ReasonInput = () => {
+interface ReasonInputProps {
+    products: IOrderProduct[] | null
+}
+export const ReasonInput:FC<ReasonInputProps> = ({products}) => {
+
+    const options = useMemo(() => {
+        return products?.map((el) => {
+            return {
+                label: `Закончился "${el.title_product}"`,
+                value: el.id_product ? el.id_product : el.title_product
+            }
+        })
+    }, [])
 
     return (
         <Item<FieldType>
@@ -18,7 +31,14 @@ export const ReasonInput = () => {
                 message: 'Пожалуйста укажите причину',
             }]}
             >
-            <Input/>
+                <Select
+                    mode="multiple"
+                    allowClear
+                    style={{ width: '100%' }}
+                    placeholder="Пожалуйста выберите все причины"
+                    options={options}
+                />
+            {/* <Input/> */}
         </Item>
     );
 };

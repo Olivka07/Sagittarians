@@ -9,6 +9,7 @@ export interface IOrder {
 }
 
 export interface IOrderProduct {
+    id_product: number
     title_product: string 
     price: number 
     weight:number 

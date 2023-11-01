@@ -38,10 +38,10 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
                         className={`item-basket__grid ${product?.warning ? 'item-basket__warning':''}`}
                     >
                         <Col
-                            span={6}
+                            span={7}
                         >
                             <Image
-                                width={200}
+                                // width={200}
                                 style={{
                                     backgroundColor: 'white',
                                     boxShadow: '#00d7ff9e 3px 3px 4px 1px',
@@ -52,7 +52,7 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
                                 <Image
                                     preview={false}
                                     src={`${product.path_image_product}`}
-                                    width={350}
+                                    // width={350}
                                 />
                                 }
                             />
@@ -69,7 +69,7 @@ export const ItemBasket:FC<ItemBasketProps> = ({itemBasket}) => {
                             <div>{`Цена: ${itemBasket.price} руб.`}</div>
                         </Col>
                         <Col
-                            span={4}
+                            span={8}
                             className='item-basket__button'
                         >
                             <DeleteItem className='item-basket__deletebtn' deleteBtn={deleteBtn}/>

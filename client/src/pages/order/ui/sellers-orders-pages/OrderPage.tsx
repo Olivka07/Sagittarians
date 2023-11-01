@@ -13,6 +13,7 @@ import { OrdersByClients } from "widgets/orders/ui/orders-clients/OrdersByClient
 import { useParams } from "react-router"
 import { OrderList } from "widgets/order/ui/order-list/OrderList"
 import { OrderListForSeller } from "widgets/order/ui/order-list-for-seller/OrderListForSeller"
+import { FooterPage } from "widgets/footer/ui/Footer"
 
 
 const OrderPage:FC = () => {
@@ -25,6 +26,7 @@ const OrderPage:FC = () => {
             <Content>
                 <OrderListForSeller id_order={Number(id_order)}/>
             </Content>
+            <FooterPage/>
         </LayoutPage>
     )
 }
