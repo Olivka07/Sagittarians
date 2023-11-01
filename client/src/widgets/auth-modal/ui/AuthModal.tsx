@@ -8,11 +8,14 @@ import { AuthButton, EmailInput, LoginInput, NameInput, PasswordInput, RegistryB
 import { useForm } from 'antd/es/form/Form'
 import { useModal } from 'shared/lib/hooks/modal.hook'
 import Message from 'shared/ui/message/Message'
+import { $pending } from 'entities/auth/store/auth.store'
+import { Spinner } from 'shared/ui/spinner'
 
 export const AuthModal = () => {
     const {modal, toggle} = useModal()
     const [form] = useForm()
     const {modalChange, $modal} = modalStore
+    const pending = useStore($pending)
     const authModal = useStore($modal)
     const [registry, setRegistry] = useState<boolean>(false)
 
@@ -34,6 +37,8 @@ export const AuthModal = () => {
                     {modal}
                 </Message>
             }
+
+            {pending && <Spinner/>}
         
             <ModalWindow
                 onCancel={() => {

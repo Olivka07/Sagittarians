@@ -32,10 +32,9 @@ class AuthService {
             '${hashPassword}',
             '${email ? email: ''}',
             '${email ? activateLink: ''}',
-            'Admin',
+            '${user_role ? user_role : 'Client'}',
             ${birthdate ? `'${birthdate}'` : null}
         )`
-        // '${user_role ? user_role : 'Client'}',
         const newUser = await db.query(str)
         const userDto = new UserDto(newUser.rows[0])
         const tokens = tokenService.generateTokens({...userDto}) 
