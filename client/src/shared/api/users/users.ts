@@ -9,6 +9,7 @@ export const login = async(
     params: LoginParams
 ): Promise<IUserDto> => {
     const {user, accessToken, refreshToken} = await apiInstance.post<DataServerUser>('/auth/login', params)
+    console.log(user, accessToken, [98,63,64],refreshToken)
     localStorage.setItem('refresh_token', refreshToken)
     localStorage.setItem('token', accessToken)
     localStorage.setItem('role', user.user_role)
