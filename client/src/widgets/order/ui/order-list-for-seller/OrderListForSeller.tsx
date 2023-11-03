@@ -109,7 +109,7 @@ export const OrderListForSeller:FC<OrderListForSellerProps> = ({id_order}) => {
                             )
                         })}
                     </ul>
-                    {!orderMeta.reason && <ButtonCancel onClick={clickCancel}/>}
+                    {!orderMeta.reason && !orderMeta.isgiven && <ButtonCancel onClick={clickCancel}/>}
                 </div> :
                 <Spinner/>
             }

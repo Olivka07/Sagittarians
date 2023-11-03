@@ -4,7 +4,6 @@ import CalendarLocale from 'rc-picker/lib/locale/ru_RU';
 export const API_URL = 'https://sagittarius-server.vercel.app/api'
 // export const API_URL = 'http://localhost:5000/api'
 
-
 export const locale: PickerLocale = {
     lang: {
         placeholder: 'Выберите дату',

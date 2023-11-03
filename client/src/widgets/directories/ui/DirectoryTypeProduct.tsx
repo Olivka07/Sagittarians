@@ -1,5 +1,5 @@
 import { useGate, useStore } from 'effector-react';
-import { $typesProducts, fetchAddTypesProductFx, fetchDeleteTypesProductFx, fetchUpdateTypesProductFx, productsGate } from 'entities/product/model/store';
+import { $typesProducts, fetchAddTypesProductFx, fetchDeleteTypesProductFx, fetchListTypesProducts, fetchUpdateTypesProductFx, productsGate } from 'entities/product/model/store';
 import React, { useEffect } from 'react';
 import { IUpdateTypesProduct } from 'shared/api/products/models';
 import { Directory } from 'shared/ui/directory';
@@ -8,6 +8,10 @@ import { DataType } from 'shared/ui/directory/ui/Directory';
 export const DirectoryTypeProduct = () => {
 
     const typesProducts = useStore($typesProducts)
+
+    useEffect(() => {
+        fetchListTypesProducts()
+    }, [])
 
     const update = async(params: DataType[]) => {
         await fetchUpdateTypesProductFx({

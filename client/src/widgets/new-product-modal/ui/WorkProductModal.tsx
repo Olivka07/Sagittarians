@@ -21,6 +21,8 @@ import { IProduct } from 'shared/api/products/models';
 import { useStore } from 'effector-react';
 import { $auth } from 'entities/auth/store/auth.store';
 import { ROLES } from 'shared/api/users/models';
+import { $loading } from 'entities/product/model/store';
+import { Spinner } from 'shared/ui/spinner';
 
 
 interface WorkProductModalProps {
@@ -33,6 +35,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
     const [form] = useForm()
     const {modal, toggle} = useModal()
     const [modalProduct, setModalProduct] = useState<boolean>(false)
+    const loading = useStore($loading)
 
     useEffect(() => {
         if (product && modalProduct) {
@@ -106,6 +109,7 @@ export const WorkProductModal: FC<WorkProductModalProps> = ({work, product}) => 
                         form={form}
                         name={`validateOnly${Date.now()}`}
                     >
+                        {loading && <Spinner/>}
                         <TitleInput/>
                         <CategorySelect/>
                         <PriceInput/>

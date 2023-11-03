@@ -304,4 +304,15 @@ forward({
     to: fetchTypesOfWeight
 })
 
+export const $loading = createStore(false)
+    .on(fetchUpdateProductFx, () => true)
+    .on(fetchUpdateProductFx.doneData, () => false)
+    .on(fetchUpdateProductFx.failData, () => false)
+    .on(fetchAddNewProductFx, () => true)
+    .on(fetchAddNewProductFx.doneData, () => false)
+    .on(fetchAddNewProductFx.failData, () => false)
+    .on(fetchDeleteProductFromCataloFx, () => true)
+    .on(fetchDeleteProductFromCataloFx.doneData, () => false)
+    .on(fetchDeleteProductFromCataloFx.failData, () => false)
+
 
