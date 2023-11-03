@@ -3,7 +3,8 @@ import CalendarLocale from 'rc-picker/lib/locale/ru_RU';
 
 // export const API_URL = 'https://sagittarius-server.vercel.app/api'
 // export const API_URL = 'http://localhost:5000/api'
-export const API_URL = 'https://server-sagittarius.onrender.com/api'
+// export const API_URL = 'https://server-sagittarius.onrender.com/api'
+export const API_URL = 'https://file-server-for-sagittarius-fzptu7bvs-olivka07.vercel.app/api'
 
 
 export const locale: PickerLocale = {
