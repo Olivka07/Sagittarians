@@ -4,7 +4,7 @@ You can view it via the link: https://sagittarius-store.vercel.app/
 
 Веб-приложение построено на клиент-серверной архитектуре, основные манипуляции с данными производятся с использованием СУБД PostgreSQL.
 Клиент написан на языке TypeScript с адапативной вёрсткой, используется основной фреймворк React для создания пользовательского интерфейса, в качестве менеджера состояния был выбран Effector,
-для взаимодействия с сервером используется Axios. Клиентская часть разработана по архитектуре Feature Sliced Design (FSD). 
+для взаимодействия с сервером используется Axios. Клиентская часть разработана по архитектуре Feature Sliced Design (FSD). Серверная часть написана на Express.
 
 Приложение подразумевает 4 основные роли:
 1. Неавторизованный пользователь;
@@ -163,6 +163,8 @@ You can view it via the link: https://sagittarius-store.vercel.app/
 ![image](https://github.com/Olivka07/Sagittarians/assets/93726291/f19c0967-89b9-4b75-ad1a-107c807e2f47)
 
 Вот так выглядит интерфейс главной страницы на телефоне:
+
+
 ![image](https://github.com/Olivka07/Sagittarians/assets/93726291/4ed2379d-450a-4dbc-8826-83b6a3b75f59)
 
 
